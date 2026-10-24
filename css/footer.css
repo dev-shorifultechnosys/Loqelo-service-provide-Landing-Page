@@ -1,0 +1,141 @@
+/* ====================================================================
+   LOQELO / STAGE 08 — Shared footer, reference-based design
+   Scope: .site-footer only. No global header, hero or previous section
+   selectors are modified. Mobile-first and 4K-safe layout.
+   ==================================================================== */
+.site-footer {
+  --footer-ink: #f8fcfc;
+  --footer-muted: rgba(223,242,243,.78);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: linear-gradient(106deg,#003138 0%,#003840 55%,#003139 100%);
+  color: var(--footer-ink);
+  border-top: 1px solid rgba(141,238,222,.17);
+  font-family: var(--font-body,"DM Sans",Arial,sans-serif);
+}
+.site-footer__decoration {position:absolute;z-index:-1;pointer-events:none;}
+.site-footer__decoration--one {
+  right:-7%;top:-70%;width:47%;aspect-ratio:1;
+  border-radius:43% 49% 53% 39%;transform:rotate(-29deg);
+  background:linear-gradient(120deg,transparent 18%,rgba(13,122,130,.15) 29%,rgba(13,131,134,.69) 50%,rgba(4,85,93,.5) 73%,transparent 80%);
+  box-shadow:inset 0 2px rgba(110,224,210,.16);
+}
+.site-footer__decoration--two {
+  right:-10%;bottom:-210%;width:63%;aspect-ratio:1;
+  border-radius:47%;transform:rotate(-22deg);
+  border:75px solid rgba(16,130,134,.17);
+}
+.site-footer__inner {position:relative;z-index:1;}
+.site-footer__main {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:24px 18px;
+  padding:26px 0 21px;
+}
+.site-footer__brand {grid-column:1/-1;min-width:0;}
+.site-footer__brand-link {display:inline-block;max-width:160px;}
+.site-footer__brand-link img {width:100%;height:auto;max-height:55px;object-fit:contain;object-position:left center;}
+.site-footer__brand p {color:var(--footer-muted);font-size:12px;line-height:1.55;margin:3px 0 14px;max-width:230px;}
+.site-footer__social {display:flex;align-items:center;gap:10px;}
+.site-footer__social-link {
+  display:grid;place-items:center;width:28px;height:28px;
+  border:1px solid rgba(223,251,252,.32);border-radius:50%;
+  color:#edfafa;background:rgba(255,255,255,.07);
+  padding:5px;transition:background .2s,transform .2s;
+}
+.site-footer__social-link:hover {transform:translateY(-2px);background:rgba(97,204,196,.25);}
+.site-footer__social-link svg {width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round;}
+.site-footer__social-link .site-footer__fill {fill:currentColor;stroke:none;}
+.site-footer__social-link .site-footer__social-dot {fill:currentColor;stroke:none;}
+.site-footer__links {min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:6px;}
+.site-footer__links h2,.site-footer__newsletter h2 {
+  font:700 clamp(14px,1.03vw,16px)/1.2 var(--font-heading,"Outfit",Arial,sans-serif);
+  margin:0 0 3px;color:#faffff;
+}
+.site-footer__links a,.site-footer__links button {
+  display:inline-flex;align-items:center;min-height:19px;color:var(--footer-muted);
+  font:500 12px/1.35 var(--font-body,"DM Sans",Arial,sans-serif);
+  text-align:left;text-decoration:none;border:0;background:none;padding:0;cursor:pointer;
+  transition:color .18s ease;
+}
+.site-footer__links a:hover,.site-footer__links button:hover {color:white;text-decoration:underline;text-underline-offset:3px;}
+.site-footer__newsletter {grid-column:1/-1;min-width:0;}
+.site-footer__newsletter p {margin:0 0 13px;max-width:350px;font-size:12px;line-height:1.5;color:var(--footer-muted);}
+.site-footer__subscribe {
+  position:relative;display:flex;align-items:center;
+  min-height:47px;border-radius:999px;max-width:425px;
+  padding:4px 4px 4px 17px;background:#fff;
+  border:1px solid #d6e9e8;box-shadow:0 11px 27px rgba(0,17,20,.17);
+}
+.site-footer__subscribe:focus-within {outline:2px solid #8fe0db;outline-offset:3px;}
+.site-footer__subscribe input {
+  appearance:none;display:block;flex:1;min-width:0;width:100%;
+  height:37px;border:0;outline:0!important;box-shadow:none!important;
+  background:transparent;color:#0c3038;padding:5px 10px;
+  font:500 12px/1.2 var(--font-body,"DM Sans",Arial,sans-serif);
+}
+.site-footer__subscribe input::placeholder {color:#748b93;opacity:1;}
+.site-footer__subscribe button {
+  display:grid;place-items:center;flex:none;width:38px;height:38px;
+  padding:9px;border:0;border-radius:50%;cursor:pointer;
+  color:white;background:#047581;box-shadow:0 3px 10px rgba(4,93,102,.26);
+  transition:transform .2s,background .2s;
+}
+.site-footer__subscribe button:hover {background:#0796a3;transform:scale(1.035);}
+.site-footer__subscribe button svg {width:100%;height:100%;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.9;}
+/* The newsletter is a gateway to the existing consent form.
+   Keep this explanation available to assistive technology while
+   matching the clean reference image (which has no extra note). */
+.site-footer__signup-note {position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important;}
+.site-footer .site-footer__feedback {color:#b8f0e7;font-size:11px;line-height:1.45;margin:8px 0 0;}
+.site-footer__bottom {border-top:1px solid rgba(214,246,242,.22);display:flex;gap:10px;justify-content:space-between;align-items:center;flex-wrap:wrap;padding:12px 0 15px;}
+.site-footer__bottom small {color:rgba(238,252,252,.8);font-size:11px;line-height:1.45;}
+.site-footer__bottom small:last-child {color:#f8fefe;}
+.site-footer button:focus-visible,.site-footer a:focus-visible {outline:2px solid #a5f1e5;outline-offset:4px;border-radius:3px;}
+
+@media (min-width:660px) {
+  .site-footer__main {grid-template-columns:1.45fr .8fr .8fr;gap:25px 24px;padding:30px 0 22px;}
+  .site-footer__brand {grid-column:1;grid-row:1;}
+  .site-footer__newsletter {grid-column:2/-1;grid-row:2;}
+}
+@media (min-width:1050px) {
+  .site-footer__main {grid-template-columns:minmax(0,1.9fr) minmax(0,.95fr) minmax(0,.86fr) minmax(0,1fr) minmax(0,2.25fr);gap:clamp(16px,2.2vw,33px);padding:27px 0 19px;align-items:start;}
+  .site-footer__brand {grid-column:1;grid-row:1;}
+  .site-footer__newsletter {grid-column:5;grid-row:1;}
+  .site-footer__brand-link {max-width:160px;}
+  .site-footer__links {gap:7px;}
+  .site-footer__social {position:static;gap:9px;margin-top:14px;}
+  .site-footer__social-link {width:34px;height:34px;}
+  .site-footer__brand {position:relative;}
+  .site-footer__subscribe {max-width:none;}
+  .site-footer__decoration--one {top:-160%;right:-9%;width:37%;}
+}
+@media (max-width:420px) {
+  .site-footer__main {gap:24px 13px;}
+  .site-footer__links a,.site-footer__links button {font-size:11.5px;}
+  .site-footer__bottom {align-items:flex-start;flex-direction:column;gap:6px;}
+}
+@media (prefers-reduced-motion:reduce) {
+  .site-footer *, .site-footer *::before, .site-footer *::after {animation:none!important;transition:none!important;scroll-behavior:auto!important;}
+}
+
+/* Stage 08 refinement — legible social artwork and bottom-bar legal link. */
+.site-footer__social { gap:9px; flex-wrap:wrap; }
+.site-footer__social-link {
+  width:34px;height:34px;padding:7px;cursor:pointer; flex:none;
+  background:rgba(244,255,253,.09);border-color:rgba(232,255,251,.39);
+  box-shadow:0 2px 10px rgba(0,0,0,.09);
+}
+.site-footer__social-link svg { width:20px;height:20px;stroke-width:1.8; }
+.site-footer__social-link .site-footer__social-solid {fill:currentColor;stroke:none;}
+.site-footer__bottom-privacy {
+  background:none;border:0;padding:4px 0;cursor:pointer;
+  font:600 11px/1.4 var(--font-body,"DM Sans",Arial,sans-serif);
+  color:rgba(238,252,252,.9);text-decoration:underline;text-underline-offset:3px;
+}
+.site-footer__bottom-privacy:hover {color:#fff;}
+@media (min-width:1050px) {
+  .site-footer__brand p {margin-bottom:7px;}
+  .site-footer__social {margin-top:10px;}
+}

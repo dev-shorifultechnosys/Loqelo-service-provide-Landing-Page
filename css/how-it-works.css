@@ -1,0 +1,228 @@
+/* ====================================================================
+   LOQELO / STAGE 02 — VIDEO AND HOW IT WORKS
+   This stylesheet is intentionally section-scoped. The original header,
+   hero and reference trust strip in style.css remain unchanged.
+
+   Design: two equal landscape cards, dark video image on the left and
+   light ivory/mint customer journey card on the right. Mobile first.
+   ==================================================================== */
+
+.story-steps {
+  padding-block: clamp(28px, 4.4vw, 64px) clamp(42px, 5.2vw, 76px);
+  background: #fff;
+}
+.story-steps__shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(16px, 1.8vw, 24px);
+}
+/* -----------------------------------
+   LEFT: video thumbnail and controls
+   ----------------------------------- */
+.story-video {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 338px;
+  border-radius: 14px;
+  color: white;
+  background: #132e30;
+  box-shadow: 0 10px 28px rgba(11,39,43,.10);
+}
+.story-video__picture,
+.story-video__image,
+.story-video__shade { position: absolute; inset: 0; width: 100%; height: 100%; }
+.story-video__picture { z-index: -2; }
+.story-video__image { object-fit: cover; object-position: 59% center; }
+.story-video__shade {
+  z-index: -1;
+  background: linear-gradient(90deg, rgba(6,26,35,.91) 0%,rgba(6,26,35,.76) 32%,rgba(7,24,28,.32) 70%,rgba(7,24,28,.1) 100%),
+              linear-gradient(0deg,rgba(0,21,24,.22),transparent 40%);
+}
+.story-video__copy { position: relative; padding: clamp(24px, 3vw, 38px); max-width: min(75%, 440px); }
+.story-video__eyebrow,.journey__eyebrow {
+  margin: 0 0 9px;
+  font-family: var(--font-body);
+  font-size: 10px;
+  line-height: 1.3;
+  font-weight: 850;
+  letter-spacing: .19em;
+}
+.story-video__eyebrow { color: #dbf6ed; }
+.story-video__headline {
+  margin: 0;
+  max-width: 320px;
+  font: 750 clamp(26px, 2.6vw, 38px)/1.045 var(--font-heading);
+  letter-spacing: -.052em;
+  text-wrap: balance;
+}
+.story-video__description {
+  margin: clamp(15px, 2.1vw, 25px) 0 0;
+  max-width: 310px;
+  font: 450 clamp(13px, 1.1vw, 15px)/1.5 var(--font-body);
+  color: #f1f7f5;
+}
+.story-video__center-play {
+  position: absolute;
+  top: 49%; left: 71%;
+  transform: translate(-50%,-50%);
+  width: clamp(58px, 6.5vw, 83px);
+  height: clamp(58px, 6.5vw, 83px);
+  display: grid; place-items: center;
+  border: 6px solid rgba(255,255,255,.58);
+  border-radius: 50%;
+  color: #047583;
+  background: #fff;
+  box-shadow: 0 12px 38px rgba(0,28,37,.28);
+  transition: transform .2s ease, box-shadow .2s ease;
+  cursor: pointer;
+}
+.story-video__center-play:hover { transform: translate(-50%,-50%) scale(1.07); box-shadow: 0 16px 45px rgba(0,28,37,.37); }
+.story-video__center-play svg { width: 27px; height: 27px; margin-left: 3px; }
+.story-video__watch {
+  position: absolute;
+  bottom: clamp(20px, 2.1vw, 29px);
+  left: clamp(24px, 3vw, 38px);
+  display: inline-flex; align-items: center; gap: 9px;
+  padding: 7px 16px 7px 8px;
+  min-height: 43px;
+  border: 1px solid #86bbc1;
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(3, 102, 117, .87);
+  box-shadow: 0 9px 28px rgba(0,21,30,.22);
+  font: 700 12px/1 var(--font-body);
+  transition: background .2s ease, transform .2s ease;
+}
+.story-video__watch:hover { background: #067d8c; transform: translateY(-2px); }
+.story-video__watch-icon { width: 27px; height: 27px; display: grid; place-items: center; border-radius: 50%; background:#fff;color:#066979; }
+.story-video__watch-icon svg { width: 14px; height: 14px; margin-left: 2px; }
+.story-video__duration { font-weight: 500; opacity: .93; }
+
+/* -----------------------------------
+   RIGHT: four-step marketplace journey
+   ----------------------------------- */
+.journey {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 338px;
+  border-radius: 14px;
+  padding: clamp(24px, 2.6vw, 36px) clamp(18px, 2.5vw, 36px);
+  background: linear-gradient(115deg,#f5fbfa 0%,#f8fcfb 60%,#eaf9f6 100%);
+}
+.journey::after { content:""; pointer-events:none; position:absolute; width:210px;height:210px;right:-98px;top:-125px;border-radius:50%;background:rgba(112,213,195,.08);z-index:-1; }
+.journey__eyebrow { color: #087d89; }
+.journey__heading {
+  margin: 0;
+  color: #0c2229;
+  font: 750 clamp(23px, 2.05vw, 33px)/1.12 var(--font-heading);
+  letter-spacing: -.047em;
+}
+.journey__list {
+  display:grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 23px 12px;
+  padding:0;
+  margin: clamp(24px, 2.7vw, 35px) 0 0;
+  list-style:none;
+}
+.journey__step { position:relative; min-width:0; text-align:center; }
+.journey__icon-wrap {
+  position:relative;
+  z-index:1;
+  display:grid;place-items:center;
+  width:74px;height:74px;
+  margin:0 auto 13px;
+  border:1px solid #e1f0ee;
+  border-radius:50%;
+  background:#fff;
+  box-shadow: 0 11px 25px rgba(21,88,91,.06);
+}
+.journey__icon { width:40px;height:40px;color:#027e8b; }
+.journey__brand-icon { width:43px;height:43px;object-fit:contain; }
+.journey__number {
+  position:absolute;top:-10px;right:-5px;
+  display:grid;place-items:center;
+  width:28px;height:28px;
+  border-radius:50%;
+  background:#057e8c;
+  color:#fff;
+  border:2px solid #f4fbf9;
+  font:800 11px/1 var(--font-body);
+}
+.journey__number--mint {background:#249f87;}
+.journey__title { margin:0 0 8px; color:#0c2229; font:800 13px/1.2 var(--font-body); }
+.journey__description { margin:0 auto;max-width:170px;color:#5b7278;font:450 11px/1.36 var(--font-body); }
+
+/* -----------------------------------
+   Native dialog for client-owned MP4
+   ----------------------------------- */
+.video-modal {
+  width:min(94vw,1100px);
+  max-height:92dvh;
+  margin:auto;padding:0;
+  border:1px solid rgba(255,255,255,.24);
+  border-radius:17px;
+  background:#061e23;
+  color:#fff;
+  overflow:hidden;
+  box-shadow:0 24px 80px rgba(0,0,0,.35);
+}
+.video-modal::backdrop {background:rgba(1,15,21,.78);backdrop-filter:blur(7px);}
+.video-modal__frame {max-height:92dvh;overflow:auto;}
+.video-modal__header {display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 12px 10px 22px;font:650 13px/1.5 var(--font-body);}
+.video-modal__close {display:grid;place-items:center;width:39px;height:39px;flex:none;color:#fff;border:1px solid #42636a;border-radius:50%;background:#193840;cursor:pointer;}
+.video-modal__close svg {width:19px;height:19px;}
+.video-modal__player {display:block;width:100%;height:auto;max-height:calc(92dvh - 62px);aspect-ratio:16 / 9;background:#091d24;}
+
+/* -----------------------------------
+   Responsive scaling / 2x2 -> 4-step
+   ----------------------------------- */
+@media (min-width: 700px) {
+  /* Keep the cards stacked on tablets so each of the four steps
+     remains comfortably readable and touch accessible. */
+  .story-video,.journey {min-height:clamp(310px,27vw,370px);}
+  .journey__list {grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;}
+  .journey__step:not(:first-child)::before {
+    content:"";position:absolute;top:37px;right:calc(50% + 42px);width:calc(100% - 84px);
+    border-top:2px dotted rgba(10,141,151,.24);
+  }
+  .journey__icon-wrap {width:65px;height:65px;margin-bottom:12px;}
+  .journey__step:not(:first-child)::before {top:32px;right:calc(50% + 37px);width:calc(100% - 74px);}
+  .journey__icon {width:34px;height:34px;}
+  .journey__brand-icon {width:37px;height:37px;}
+  .journey__number {width:25px;height:25px;top:-10px;right:-6px;font-size:10px;}
+  .journey__title {font-size:clamp(10px, .83vw, 12px);}
+  .journey__description {font-size:clamp(9px, .74vw, 11px);}
+}
+@media (min-width: 1000px) {
+  .story-steps__shell {grid-template-columns:minmax(0,1fr) minmax(0,1fr);}
+}
+@media (min-width: 1120px) {
+  .story-video,.journey {min-height:clamp(325px,25vw,367px);}
+  .journey__icon-wrap {width:77px;height:77px;}
+  .journey__step:not(:first-child)::before {top:39px;right:calc(50% + 44px);width:calc(100% - 88px);}
+  .journey__icon {width:40px;height:40px;}
+  .journey__brand-icon {width:44px;height:44px;}
+  .journey__title {font-size:12px;}
+  .journey__description {font-size:11px;}
+  .journey__number {width:29px;height:29px;}
+}
+@media (max-width: 699px) {
+  .story-video__copy {max-width:min(82%,430px);}
+  .story-video__center-play {left:77%;top:57%;width:65px;height:65px;}
+  .journey__heading {max-width:450px;}
+  .journey {padding-bottom:30px;}
+}
+@media (max-width: 410px) {
+  .story-video {min-height:352px;}
+  .story-video__copy {max-width:85%;}
+  .story-video__headline {font-size:27px;}
+  .story-video__center-play {left:79%;top:57%;width:58px;height:58px;}
+  .journey__title {font-size:12px;}
+  .journey__description {font-size:10px;}
+}
+@media (prefers-reduced-motion:reduce) {
+  .story-video__center-play,.story-video__watch {transition:none;}
+}

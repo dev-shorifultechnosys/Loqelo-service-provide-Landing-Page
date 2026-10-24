@@ -1,0 +1,193 @@
+/* ===================================================================
+   LOQELO / STAGE 04 — POPULAR SERVICE CATEGORIES
+   Scoped component stylesheet. Previous section styles are not edited.
+   Mobile-first: 2 columns -> 3 columns -> 5 columns (10 visible cards).
+   Client assets: original Pixabay-licensed UI photos and Loqelo SVG icons.
+   =================================================================== */
+
+.categories {
+  padding-block: clamp(32px, 3.2vw, 48px) clamp(55px, 5.5vw, 85px);
+  background: linear-gradient(115deg, #fff 0%, #fff 78%, #f2faf8 100%);
+  scroll-margin-top: 30px;
+}
+.categories__inner { position: relative; }
+.categories__heading-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: clamp(14px, 1.4vw, 21px);
+}
+.categories__eyebrow {
+  margin: 0 0 7px;
+  font: 850 10px/1.2 var(--font-body);
+  letter-spacing: .2em;
+  color: #077e88;
+}
+.categories__heading {
+  margin: 0;
+  color: var(--color-ink, #0c2229);
+  font: 700 clamp(24px, 2.1vw, 34px)/1.12 var(--font-heading);
+  letter-spacing: -.04em;
+}
+.categories__view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 0;
+  border: 0;
+  background: transparent;
+  color: #007785;
+  font: 800 clamp(11px, .91vw, 13px)/1.3 var(--font-body);
+  white-space: nowrap;
+  transition: gap .2s ease, color .2s ease;
+}
+.categories__view-all:hover { gap: 14px; color: #004d56; }
+.categories__arrow { width: 18px; height: 18px; }
+.categories__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(12px, 1.4vw, 21px);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.categories__item { min-width: 0; }
+.category-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  overflow: hidden;
+  padding: 0;
+  border: 1px solid #edf3f2;
+  border-radius: 17px;
+  background: #fff;
+  color: var(--color-ink, #0c2229);
+  text-align: left;
+  box-shadow: 0 8px 25px rgba(22, 68, 69, .085);
+  transition: transform .3s cubic-bezier(.22, 1, .36, 1), box-shadow .3s ease, border-color .3s ease;
+}
+.category-card:hover,
+.category-card:focus-visible {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 35px rgba(12, 61, 66, .15);
+  border-color: #c0e5dc;
+}
+.category-card__media {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.42;
+  overflow: hidden;
+  background: #d5e3dd;
+}
+.category-card__media picture,
+.category-card__image { display: block; width: 100%; height: 100%; }
+.category-card__image {
+  object-fit: cover;
+  object-position: center;
+  transition: transform .6s cubic-bezier(.2,.7,.25,1);
+}
+.category-card:hover .category-card__image { transform: scale(1.065); }
+.category-card__details {
+  display: flex;
+  align-items: center;
+  gap: clamp(9px, .95vw, 13px);
+  padding: clamp(12px, 1.1vw, 16px);
+  flex: 1;
+  min-height: 96px;
+}
+.category-card__icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #087c88;
+  box-shadow: 0 3px 8px rgba(5, 90, 97, .15);
+}
+.category-card__icon img { display: block; width: 21px; height: 21px; }
+.category-card__copy { display: grid; gap: 3px; min-width: 0; }
+.category-card__title {
+  display: block;
+  font: 750 clamp(13px, 1.12vw, 17px)/1.18 var(--font-heading);
+  color: #09232b;
+}
+.category-card__description {
+  display: block;
+  font: 450 clamp(11px, .87vw, 13px)/1.45 var(--font-body);
+  color: #78898e;
+  text-wrap: pretty;
+}
+@media (min-width: 700px) {
+  .categories__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (min-width: 1100px) {
+  .categories__grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
+@media (max-width: 430px) {
+  .category-card__details { align-items: flex-start; gap: 8px; min-height: 91px; padding: 12px 9px; }
+  .category-card__icon { flex-basis: 31px; width: 31px; height: 31px; }
+  .category-card__icon img { width: 18px; height: 18px; }
+  .category-card__title { font-size: 12px; }
+  .category-card__description { font-size: 10px; line-height: 1.35; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .category-card, .category-card__image, .categories__view-all { transition: none; }
+}
+
+/* The final card is an enquiry invitation, not a newly invented
+   guaranteed category. Uses the original logo and CSS-only shapes. */
+.category-card__media--brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+  background: linear-gradient(140deg, #072c32 0%, #086772 61%, #5dc4ad 100%);
+}
+.category-card__brand-mark {
+  position: relative;
+  z-index: 2;
+  width: clamp(48px, 5.2vw, 74px);
+  height: auto;
+  filter: drop-shadow(0 9px 12px rgba(0,0,0,.2));
+}
+.category-card__brand-shape {
+  position: absolute;
+  width: 135px;
+  aspect-ratio: 1;
+  border: 1px solid rgba(255,255,255,.23);
+  border-radius: 38% 62% 60% 40%;
+  transform: rotate(24deg);
+}
+.category-card__brand-shape--first { inset: -40% auto auto -15%; }
+.category-card__brand-shape--second { inset: auto -27% -55% auto; width: 180px; }
+.category-card__brand-caption {
+  position: absolute;
+  bottom: 13px;
+  left: 10px;
+  right: 10px;
+  color: rgba(255,255,255,.92);
+  font: 750 clamp(7px, .62vw, 9px)/1.4 var(--font-body);
+  letter-spacing: .16em;
+  text-align: center;
+}
+.category-card--other .category-card__icon {
+  background: #e7f8f4;
+}
+.category-card--other .category-card__icon img { width: 27px; height: 27px; }
+@media (min-width: 700px) and (max-width: 1099px) {
+  .category-card__details { min-height: 92px; }
+}
+
+.categories__view-all { cursor: pointer; }
+.categories__item.is-hidden { display: none; }
+.categories__grid.is-expanded .categories__item { animation: categoriesReveal .35s ease; }
+@keyframes categoriesReveal {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}

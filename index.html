@@ -1,0 +1,1507 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#effaf9">
+  <meta name="description" content="Everything your place needs. Loqelo is preparing to connect customers and service providers for home, garden and office services. Launching February 2027.">
+  <!-- Indexing is controlled at deployment by robots.txt and the public HTTPS configuration. -->
+  <meta name="robots" content="noindex,follow">
+  <link rel="canonical" href="https://loqelo.com/">
+  <title>Loqelo — Everything your place needs. | February 2027</title>
+  <meta property="og:type" content="website"><meta property="og:title" content="Loqelo — Everything your place needs."><meta property="og:description" content="Join the pre-launch waitlist for home, garden and office services. Planned launch: February 2027."><meta property="og:url" content="https://loqelo.com/">
+  <link rel="icon" type="image/png" sizes="256x256" href="assets/icons/favicon.png">
+
+  <!-- Self-hosted client-approved fonts: no CDN, no icon fonts, no external libraries. -->
+  <link rel="preload" href="assets/fonts/Outfit[wght].ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="assets/images/hero/home-1280.webp?v=7" as="image" type="image/webp" media="(max-width: 1280px)">
+  <link rel="preload" href="assets/images/hero/home-1920.webp?v=7" as="image" type="image/webp" media="(min-width: 1281px)">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Stage 02 section styling is isolated to preserve the approved hero. -->
+  <link rel="stylesheet" href="css/how-it-works.css">
+  <!-- Stage 03: isolated styles for the approved six-card services section. -->
+  <link rel="stylesheet" href="css/categories.css">
+  <script defer src="js/main.js"></script>
+  <script defer src="js/video-player.js"></script>
+  <script defer src="js/categories.js"></script>
+  <!-- Stage 05 layout and interactions are self-contained. -->
+  <link rel="stylesheet" href="css/waitlist.css">
+  <!-- Audience refinements: clean user-supplied photographs + bottom-right mini UI. -->
+  <link rel="stylesheet" href="css/audience-refinement.css">
+  <script defer src="js/waitlist.js"></script>
+  <!-- Stage 06 / original Loqelo Figma interface previews and informative cards. -->
+  <link rel="stylesheet" href="css/platform-preview.css">
+  <script defer src="js/platform-preview.js"></script>
+  <!-- Stage 07: isolated FAQ and final pre-launch CTA. -->
+  <link rel="stylesheet" href="css/faq-cta.css">
+  <script defer src="js/faq-cta.js"></script>
+  <!-- Stage 08: isolated reference-matched shared footer. -->
+  <link rel="stylesheet" href="css/footer.css">
+  <script defer src="js/footer.js"></script>
+  <link rel="stylesheet" href="css/live-chat.css">
+  <script defer src="js/live-chat.js"></script>
+  <link rel="stylesheet" href="css/production.css">
+  <script defer src="js/site-config.js"></script>
+  <script defer src="js/production.js"></script>
+  <!-- Accessible V9 language menu: native select remains a no-JavaScript fallback. -->
+  <link rel="stylesheet" href="css/language-menu.css">
+  <script defer src="js/language-menu.js"></script>
+
+</head>
+<body id="home" data-project-stage="complete-prelaunch">
+
+  <!-- Icon symbols: all icons are inline SVG; no third-party icon library or runtime dependency. -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="svg-sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 2 8 4v6c0 5-3.6 8.1-8 10-4.4-1.9-8-5-8-10V6l8-4Z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M2 20v-2c0-3 3-5 7-5s7 2 7 5v2"/><path d="M16 5a3 3 0 0 1 0 6M17 14c3 0 5 2 5 5v1"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 5v2"/></symbol>
+    <symbol id="i-house" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8v9H3z"/><path d="M9 20v-6h6v6"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M20 4C10 4 4 7 4 15a5 5 0 0 0 5 5c8 0 11-6 11-16ZM5 19c3-4 7-7 12-10"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V4h8v3M3 13h18m-11 0v2h4v-2"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m5 5 14 14M19 5 5 19"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></symbol>
+  </svg>
+
+  <!-- =============================================================
+       SHARED HEADER / NAVIGATION — identical markup across pages.
+       Ready to extract into a CMS/server include in later phases.
+       ============================================================= -->
+  <header class="site-header">
+    <div class="site-header__inner container">
+      <a class="site-header__brand" href="#home" aria-label="Loqelo — Home">
+        <img src="assets/logo/loqelo-logo.svg" alt="Loqelo" width="180" height="47">
+      </a>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a href="#home" class="site-nav__link site-nav__link--active" aria-current="page" data-i18n="navHome">Home</a>
+        <button class="site-nav__link" type="button" data-next="how" data-i18n="navHow">How it works</button>
+        <button class="site-nav__link" type="button" data-next="services" data-i18n="navServices">Services</button>
+        <button class="site-nav__link" type="button" data-next="customers" data-i18n="navCustomers">For Customers</button>
+        <button class="site-nav__link" type="button" data-next="providers" data-i18n="navProviders">For Providers</button>
+        <a class="site-nav__link" href="#faq" data-i18n="navAbout">FAQ</a>
+      </nav>
+      <div class="site-header__actions">
+        <div class="language-picker">
+          <svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg>
+          <label class="sr-only" for="language" data-i18n="languageLabel">Language</label>
+          <select class="language-picker__select" id="language" aria-label="Language">
+            <option value="en">EN</option>
+            <option value="de">DE</option>
+            <option value="fr">FR</option>
+            <option value="pl">PL</option>
+          </select>
+        </div>
+        <button class="button button--login" type="button" data-next="login" data-i18n="login">Log in</button>
+        <button class="button button--primary site-header__cta" type="button" data-open-waitlist="customer">
+          <span data-i18n="joinWaitlist">Join the waitlist</span>
+          <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </button>
+      </div>
+      <button class="site-header__menu-toggle" type="button" aria-label="Open navigation" aria-controls="site-nav" aria-expanded="false">
+        <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- =============================================================
+         HERO SECTION — STAGE 01
+         - 3 responsive image slides
+         - Crossfade + depth (background moves from back to front)
+         - Keyboard, arrow, thumbnails, autoplay, pause controls
+         - Separate HTML content never moves with the background
+         ============================================================= -->
+    <section class="hero" aria-label="Loqelo pre-launch" data-hero>
+      <div class="hero__slides" aria-hidden="true">
+        <div class="hero__slide is-active" data-slide="0">
+          <picture>
+            <source type="image/webp" srcset="assets/images/hero/home-720.webp?v=7 720w, assets/images/hero/home-1280.webp?v=7 1280w, assets/images/hero/home-1920.webp?v=7 1920w" sizes="100vw">
+            <img class="hero__image hero__image--home" src="assets/images/hero/home-1920.jpg?v=7" srcset="assets/images/hero/home-720.jpg?v=7 720w, assets/images/hero/home-1280.jpg?v=7 1280w, assets/images/hero/home-1920.jpg?v=7 1920w" sizes="100vw" width="1920" height="920" alt="" fetchpriority="high" decoding="async">
+          </picture>
+        </div>
+        <div class="hero__slide" data-slide="1">
+          <picture>
+            <source type="image/webp" srcset="assets/images/hero/garden-720.webp 720w, assets/images/hero/garden-1280.webp 1280w, assets/images/hero/garden-1920.webp 1920w" sizes="100vw">
+            <img class="hero__image hero__image--garden" src="assets/images/hero/garden-1920.jpg" srcset="assets/images/hero/garden-720.jpg 720w, assets/images/hero/garden-1280.jpg 1280w, assets/images/hero/garden-1920.jpg 1920w" sizes="100vw" width="1920" height="920" alt="" loading="eager" decoding="async">
+          </picture>
+        </div>
+        <div class="hero__slide" data-slide="2">
+          <picture>
+            <source type="image/webp" srcset="assets/images/hero/office-720.webp 720w, assets/images/hero/office-1280.webp 1280w, assets/images/hero/office-1920.webp 1920w" sizes="100vw">
+            <img class="hero__image hero__image--office" src="assets/images/hero/office-1920.jpg" srcset="assets/images/hero/office-720.jpg 720w, assets/images/hero/office-1280.jpg 1280w, assets/images/hero/office-1920.jpg 1920w" sizes="100vw" width="1920" height="920" alt="" loading="eager" decoding="async">
+          </picture>
+        </div>
+      </div>
+      <div class="hero__veil" aria-hidden="true"></div>
+
+      <div class="hero__body container">
+        <div class="hero__content">
+          <p class="hero__eyebrow" data-i18n="eyebrow">Trusted services for a brighter tomorrow</p>
+          <h1 class="hero__title"><span data-i18n="heroTitle1">Everything</span><br><span data-i18n="heroTitle2">your place <em>needs.</em></span></h1>
+          <p class="hero__description" data-i18n="heroDescription">Find trusted professionals for your home, garden, and office. Compare quotes, read reviews, and book with confidence — all in one place.</p>
+          <div class="hero__buttons">
+            <button class="button button--primary button--hero" type="button" data-open-waitlist="customer">
+              <span data-i18n="customerCta">Join as a Customer</span>
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </button>
+            <button class="button button--outline button--hero" type="button" data-open-waitlist="provider">
+              <span data-i18n="providerCta">Join as a Service Provider</span>
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </button>
+          </div>
+          <div class="hero__social-proof">
+            <div class="hero__avatars" aria-hidden="true">
+              <span class="avatar avatar--a">A</span><span class="avatar avatar--b">J</span><span class="avatar avatar--c">S</span><span class="avatar avatar--d">M</span><span class="avatar avatar--e">K</span>
+            </div>
+            <p data-i18n="heroNote">Be among the first to hear when Loqelo launches.<br>Join our early-access waitlist.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__device-showcase" aria-hidden="true">
+        <div class="hero__device-stage">
+          <img class="hero__device hero__device--laptop" src="assets/images/hero/loqelo-laptop-process.png" width="1470" height="960" alt="">
+          <img class="hero__device hero__device--mobile" src="assets/images/hero/loqelo-mobile-process.png" width="800" height="1380" alt="">
+          <div class="hero__process-card hero__process-card--brief">
+            <span class="hero__process-step">01</span>
+            <strong>Describe your need</strong>
+            <small>Tell us what you need in one sentence.</small>
+          </div>
+          <div class="hero__process-card hero__process-card--offers">
+            <span class="hero__process-step">03</span>
+            <strong>Receive offers</strong>
+            <small>Compare quotes and choose the right pro.</small>
+          </div>
+          <div class="hero__process-pulse">
+            <span class="hero__process-dot"></span>
+            <span>4-step Loqelo process</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service preview label (no invented customer ratings). -->
+      <div class="hero__service-badge" aria-live="off">
+        <div class="hero__service-mark"><img src="assets/logo/loqelo-icon.svg" alt="" width="25" height="25"></div>
+        <div class="hero__service-info">
+          <strong data-badge-title>Garden maintenance</strong>
+          <span data-i18n="previewBadge">Service preview</span>
+        </div>
+        <div class="hero__rating" aria-label="Pre-launch service concept"><span aria-hidden="true">PREVIEW</span><b>2027</b></div>
+      </div>
+
+      <div class="hero__controls container" aria-label="Hero image carousel controls">
+        <button class="hero__arrow hero__arrow--prev" type="button" data-slide-prev aria-label="Previous image">
+          <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg>
+        </button>
+        <div class="hero__thumbnails" role="group" aria-label="Choose a service image">
+          <button class="hero__thumbnail is-current" type="button" data-slide-to="0" aria-current="true" aria-label="Show Home services image">
+            <picture><source srcset="assets/images/thumbnails/home.webp?v=7" type="image/webp"><img src="assets/images/thumbnails/home.jpg?v=7" alt="" width="520" height="248"></picture><span data-i18n="thumbHome">Home services</span>
+          </button>
+          <button class="hero__thumbnail" type="button" data-slide-to="1" aria-label="Show Garden care image">
+            <picture><source srcset="assets/images/thumbnails/garden.webp" type="image/webp"><img src="assets/images/thumbnails/garden.jpg" alt="" width="520" height="248"></picture><span data-i18n="thumbGarden">Garden care</span>
+          </button>
+          <button class="hero__thumbnail" type="button" data-slide-to="2" aria-label="Show Office solutions image">
+            <picture><source srcset="assets/images/thumbnails/office.webp" type="image/webp"><img src="assets/images/thumbnails/office.jpg" alt="" width="520" height="248"></picture><span data-i18n="thumbOffice">Office solutions</span>
+          </button>
+        </div>
+        <button class="hero__arrow hero__arrow--next" type="button" data-slide-next aria-label="Next image">
+          <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg>
+        </button>
+        <div class="hero__counter" aria-live="polite"><span data-current-number>01</span> / 03</div>
+        <button class="hero__pause" type="button" data-play-toggle aria-label="Pause automatic slideshow" aria-pressed="false"><span data-play-symbol aria-hidden="true">Ⅱ</span></button>
+        <div class="hero__progress" aria-hidden="true"><span data-slide-progress></span></div>
+      </div>
+    </section>
+
+    <!-- =============================================================
+         STRIP DIRECTLY UNDER HERO — visual layout preserved.
+         Category examples replace unverified press-publication claims.
+         Benefits are descriptions of the planned platform experience.
+         ============================================================= -->
+    <section class="trust-strip" aria-label="Types of services and planned features">
+      <div class="trust-strip__inner container">
+        <div class="trust-strip__press" aria-label="Loqelo service areas">
+          <span class="trust-strip__label">DESIGNED FOR</span>
+          <span class="trust-strip__publication trust-strip__publication--forbes">Home</span>
+          <span class="trust-strip__publication trust-strip__publication--tc">Garden care</span>
+          <span class="trust-strip__publication trust-strip__publication--bi">OFFICE<br>NEEDS</span>
+          <span class="trust-strip__publication trust-strip__publication--guardian">Everyday<br>tasks</span>
+          <span class="trust-strip__publication trust-strip__publication--bloomberg">Professionals</span>
+        </div>
+        <div class="trust-strip__benefits">
+          <div class="trust-strip__benefit"><span class="trust-strip__icon"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span><span data-i18n="benefitOne">Service profiles</span></div>
+          <div class="trust-strip__benefit"><span class="trust-strip__icon"><svg class="icon" aria-hidden="true"><use href="#i-people"/></svg></span><span data-i18n="benefitTwo">Compare offers</span></div>
+          <div class="trust-strip__benefit"><span class="trust-strip__icon"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span><span data-i18n="benefitThree">Easy to explore</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================================
+         STAGE 02 — VIDEO + HOW LOQELO WORKS
+         Design reference: client's approved two-column image.
+         Original pre-launch video and Loqelo icon supplied by client.
+         Keep this section independently reusable in future CMS builds.
+         ============================================================= -->
+    <section class="story-steps" id="how-it-works" aria-label="Discover Loqelo and how it works">
+      <div class="story-steps__shell container">
+
+        <!-- Feature 01: poster plus controls; the actual video is
+             loaded on demand in a native accessible dialog below. -->
+        <article class="story-video" aria-labelledby="story-video-heading">
+          <picture class="story-video__picture">
+            <source type="image/webp" srcset="assets/images/video/loqelo-story-640.webp 640w, assets/images/video/loqelo-story-1040.webp 1040w, assets/images/video/loqelo-story-1280.webp 1280w" sizes="(min-width: 1000px) 46vw, (min-width: 720px) 48vw, 92vw">
+            <img class="story-video__image" src="assets/images/video/loqelo-story-1040.jpg" srcset="assets/images/video/loqelo-story-640.jpg 640w, assets/images/video/loqelo-story-1040.jpg 1040w, assets/images/video/loqelo-story-1280.jpg 1280w" sizes="(min-width: 1000px) 46vw, (min-width: 720px) 48vw, 92vw" width="1040" height="484" alt="Contemporary home with a landscaped outdoor terrace" loading="lazy" decoding="async">
+          </picture>
+          <div class="story-video__shade" aria-hidden="true"></div>
+          <div class="story-video__copy">
+            <p class="story-video__eyebrow" data-i18n="storyEyebrow">SEE LOQELO IN ACTION</p>
+            <h2 class="story-video__headline" id="story-video-heading" data-i18n="storyHeadline">A simpler way to<br>get things done.</h2>
+            <p class="story-video__description" data-i18n="storyDescription">Watch how Loqelo connects people with trusted local professionals for home, garden and office services.</p>
+          </div>
+          <button class="story-video__center-play" type="button" data-video-open aria-label="Play Loqelo promotional video">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 11 7-11 7V5Z" fill="currentColor"/></svg>
+          </button>
+          <button class="story-video__watch" type="button" data-video-open>
+            <span class="story-video__watch-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 5 11 7-11 7V5Z" fill="currentColor"/></svg></span>
+            <span data-i18n="storyWatch">Watch the video</span>
+            <span class="story-video__duration">(1:22)</span>
+          </button>
+        </article>
+
+        <!-- Feature 02: four steps follow the exact client process. -->
+        <div class="journey" aria-labelledby="journey-heading">
+          <p class="journey__eyebrow" data-i18n="journeyEyebrow">HOW LOQELO WORKS</p>
+          <h2 class="journey__heading" id="journey-heading" data-i18n="journeyHeadline">From one sentence to the right pro.</h2>
+          <ol class="journey__list">
+            <li class="journey__step">
+              <span class="journey__icon-wrap">
+                <svg class="journey__icon" viewBox="0 0 40 40" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7 11h26v17H19l-7 6v-6H7V11Z"/><path d="M13 17h14M13 22h10"/><path d="m23 28 9-9 3 3-9 9-4 1 1-4Z" fill="#f4fbf9"/>
+                </svg>
+                <span class="journey__number">01</span>
+              </span>
+              <h3 class="journey__title" data-i18n="step1Title">Describe your need</h3>
+              <p class="journey__description" data-i18n="step1Body">One sentence, in your own words. Add photos if it helps.</p>
+            </li>
+            <li class="journey__step">
+              <span class="journey__icon-wrap">
+                <img class="journey__brand-icon" src="assets/logo/loqelo-icon.svg" width="45" height="45" alt="">
+                <span class="journey__number journey__number--mint">02</span>
+              </span>
+              <h3 class="journey__title" data-i18n="step2Title">We find the services</h3>
+              <p class="journey__description" data-i18n="step2Body">Loqelo matches you with trusted local professionals.</p>
+            </li>
+            <li class="journey__step">
+              <span class="journey__icon-wrap">
+                <svg class="journey__icon" viewBox="0 0 40 40" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="9" y="6" width="19" height="29" rx="3"/><path d="M14 13h9M14 18h9M14 23h6"/>
+                  <circle cx="28" cy="29" r="7" fill="#f4fbf9"/><path d="m25 29 2 2 4-4"/>
+                </svg>
+                <span class="journey__number">03</span>
+              </span>
+              <h3 class="journey__title" data-i18n="step3Title">Receive offers</h3>
+              <p class="journey__description" data-i18n="step3Body">Compare quotes, reviews and availability.</p>
+            </li>
+            <li class="journey__step">
+              <span class="journey__icon-wrap">
+                <svg class="journey__icon" viewBox="0 0 40 40" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="17" cy="13" r="7"/><path d="M5 34v-3c0-7 5-11 12-11 4 0 8 1 10 5"/>
+                  <circle cx="30" cy="29" r="8" fill="#f4fbf9"/><path d="m26 29 3 3 5-6"/>
+                </svg>
+                <span class="journey__number">04</span>
+              </span>
+              <h3 class="journey__title" data-i18n="step4Title">Choose a provider</h3>
+              <p class="journey__description" data-i18n="step4Body">Book with confidence and get it done.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===============================================================
+         STAGE 04 — POPULAR SERVICE CATEGORIES (REFINED 5 × 2 GRID)
+         Uses the supplied six-card visual language, now showing 9 known
+         categories + 1 "Other services" enquiry card in 2 rows of 5
+         on desktop. Only this section's styling, content, and behaviour
+         are changed; prior sections remain untouched.
+         All cards lead to the pre-launch waitlist, not live booking.
+         =============================================================== -->
+    <section class="categories" id="services" aria-labelledby="categories-heading">
+      <div class="categories__inner container">
+        <div class="categories__heading-row">
+          <div class="categories__intro">
+            <p class="categories__eyebrow" data-category-i18n="eyebrow">EXPLORE OUR SERVICES</p>
+            <h2 class="categories__heading" id="categories-heading" data-category-i18n="heading">Popular categories</h2>
+          </div>
+          <button class="categories__view-all" type="button" data-categories-toggle aria-expanded="false" aria-controls="services-grid">
+            <span data-category-i18n="viewAll">View all categories</span>
+            <svg class="categories__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+          </button>
+        </div>
+        <ul class="categories__grid" id="services-grid" aria-label="Service categories">
+          <li class="categories__item" data-category="home">
+            <button class="category-card" type="button" data-open-waitlist="customer" aria-label="Join the customer waitlist for home services">
+              <span class="category-card__media">
+                <picture>
+                  <source type="image/webp" srcset="assets/images/categories/home-360.webp 360w, assets/images/categories/home-640.webp 640w, assets/images/categories/home-900.webp 900w" sizes="(min-width: 1500px) 258px, (min-width: 1100px) 19vw, (min-width: 700px) 31vw, 45vw">
+                  <img class="category-card__image" src="assets/images/categories/home-640.jpg" srcset="assets/images/categories/home-360.jpg 360w, assets/images/categories/home-640.jpg 640w, assets/images/categories/home-900.jpg 900w" sizes="(min-width: 1500px) 258px, (min-width: 1100px) 19vw, (min-width: 700px) 31vw, 45vw" width="900" height="596" alt="Home: Cleaning, repairs & more" loading="lazy" decoding="async">
+                </picture>
+              </span>
+              <span class="category-card__details">
+                <span class="category-card__icon" aria-hidden="true"><img src="assets/icons/categories/home.svg" width="22" height="22" alt=""></span>
+                <span class="category-card__copy">
+                  <span class="category-card__title" data-category-i18n="homeTitle">Home</span>
+                  <span class="category-card__description" data-category-i18n="homeDescription">Cleaning, repairs & more</span>
+                </span>
+              </span>
+            </button>
+          </li>
+          <li class="categories__item" data-category="garden">
+            <button class="category-card" type="button" data-open-waitlist="customer" aria-label="Join the customer waitlist for garden services">
+              <span class="category-card__media">
+                <picture>
+                  <source type="image/webp" srcset="assets/images/categories/garden-360.webp 360w, assets/images/categories/garden-640.webp 640w, assets/images/categories/garden-900.webp 900w" sizes="(min-width: 1500px) 258px, (min-width: 1100px) 19vw, (min-width: 700px) 31vw, 45vw">
+                  <img class="category-card__image" src="assets/images/categories/garden-640.jpg" srcset="assets/images/categories/garden-360.jpg 360w, assets/images/categories/garden-640.jpg 640w, assets/images/categories/garden-900.jpg 900w" sizes="(min-width: 1500px) 258px, (min-width: 1100px) 19vw, (min-width: 700px) 31vw, 45vw" width="900" height="596" alt="Garden: Landscaping, mowing & care" loading="lazy" decoding="async">
+                </picture>
+              </span>
+              <span class="category-card__details">
+                <span class="category-card__icon" aria-hidden="true"><img src="assets/icons/categories/garden.svg" width="22" height="22" alt=""></span>
+                <span class="category-card__copy">
+                  <span class="category-card__title" data-category-i18n="gardenTitle">Garden</span>
+                  <span class="category-card__description" data-category-i18n="gardenDescription">Landscaping, mowing & care</span>
+                </span>
+              </span>
+            </button>
+          </li>
+          <li class="categories__item" data-category="office">
+            <button class="category-card" type="button" data-open-waitlist="customer" aria-label="Join the customer waitlist for office services">
+              <span class="category-card__media">
+                <picture>
+                  <source type="image/webp" srcset="assets/images/categories/office-360.webp 360w, assets/images/categories/office-640.webp 640w, assets/images/categories/office-900.webp 900w" sizes="(min-width: 1500px) 258px, (min-width: 1100px) 19vw, (min-width: 700px) 31vw, 45vw">
+                  <img class="category-card__image" src="assets/images/categories/office-640.jpg" srcset="assets/images/categories/office-360.jpg 360w, assets/images/categories/office-640.jpg 640w, assets/images/categories/office-900.jpg 900w" sizes="(min-width: 1500px) 258px, (min-width: 1100px) 19vw, (min-width: 700px) 31vw, 45vw" width="900" height="596" alt="Office: Cleaning, maintenance & fit-outs" loading="lazy" decoding="async">
+                </picture>
+              </span>
+              <span class="category-card__details">
+                <span class="category-card__icon" aria-hidden="true"><img src="assets/icons/categories/office.svg" width="22" height="22" alt=""></span>
+                <span class="category-card__copy">
+                  <span class="category-card__title" data-category-i18n="officeTitle">Office</span>
+                  <span class="category-card__description" data-category-i18n="officeDescription">Cleaning, maintenance & fit-outs</span>
+                </span>
+              </span>
+            </button>
+          </li>
+          <li class="categories__item" data-category="installations">
+            <button class="category-card" type="button" data-open-waitlist="customer" aria-label="Join the customer waitlist for installations services">
+              <span class="category-card__media">
+                <picture>
+                  <source type="image/webp" srcset="assets/images/categories/installations-360.webp 360w, assets/images/categories/installations-640.webp 640w, assets/images/categories/installations-900.webp 900w" sizes="(min-width: 1500px) 258px, (min-width: 1100px) 19vw, (min-width: 700px) 31vw, 45vw">
+                  <img class="category-card__image" src="assets/images/categories/installations-640.jpg" srcset="assets/images/categories/installations-360.jpg 360w, assets/images/categories/installations-640.jpg 640w, assets/images/categories/installations-900.jpg 900w" sizes="(min-width: 1500px) 258px, (min-width: 1100px) 19vw, (min-width: 700px) 31vw, 45vw" width="900" height="596" alt="Installations: Electrical, plumbing & more" loading="lazy" decoding="async">
+                </picture>
+              </span>
+              <span class="category-card__details">
+                <span class="category-card__icon" aria-hidden="true"><img src="assets/icons/categories/installations.svg" width="22" height="22" alt=""></span>
+                <span class="category-card__copy">
+                  <span class="category-card__title" data-category-i18n="installationsTitle">Installations</span>
+                  <span class="category-card__description" data-category-i18n="installationsDescription">Electrical, plumbing & more</span>
+                </span>
+              </span>
+            </button>
+          </li>
+          <li class="categories__item" data-category="pets">
+            <button class="category-card" type="button" data-open-waitlist="customer" aria-label="Join the customer waitlist for pets services">
+              <span class="category-card__media">
+                <picture>
+                  <source type="image/webp" srcset="assets/images/categories/pets-360.webp 360w, assets/images/categories/pets-640.webp 640w, assets/images/categories/pets-900.webp 900w" sizes="(min-width: 1500px) 258px, (min-width: 1100px) 19vw, (min-width: 700px) 31vw, 45vw">
+                  <img class="category-card__image" src="assets/images/categories/pets-640.jpg" srcset="assets/images/categories/pets-360.jpg 360w, assets/images/categories/pets-640.jpg 640w, assets/images/categories/pets-900.jpg 900w" sizes="(min-width: 1500px) 258px, (min-width: 1100px) 19vw, (min-width: 700px) 31vw, 45vw" width="900" height="596" alt="Pets: Pet care & services" loading="lazy" decoding="async">
+                </picture>
+              </span>
+              <span class="category-card__details">
+                <span class="category-card__icon" aria-hidden="true"><img src="assets/icons/categories/pets.svg" width="22" height="22" alt=""></span>
+                <span class="category-card__copy">
+                  <span class="category-card__title" data-category-i18n="petsTitle">Pets</span>
+                  <span class="category-card__description" data-category-i18n="petsDescription">Pet care & services</span>
+                </span>
+              </span>
+            </button>
+          </li>
+          <li class="categories__item" data-category="vehicles">
+            <button class="category-card" type="button" data-open-waitlist="customer" aria-label="Join the customer waitlist for vehicles services">
+              <span class="category-card__media">
+                <picture>
+                  <source type="image/webp" srcset="assets/images/categories/vehicles-360.webp 360w, assets/images/categories/vehicles-640.webp 640w, assets/images/categories/vehicles-900.webp 900w" sizes="(min-width: 1500px) 258px, (min-width: 1100px) 19vw, (min-width: 700px) 31vw, 45vw">
+                  <img class="category-card__image" src="assets/images/categories/vehicles-640.jpg" srcset="assets/images/categories/vehicles-360.jpg 360w, assets/images/categories/vehicles-640.jpg 640w, assets/images/categories/vehicles-900.jpg 900w" sizes="(min-width: 1500px) 258px, (min-width: 1100px) 19vw, (min-width: 700px) 31vw, 45vw" width="900" height="596" alt="Vehicles: Cleaning, detailing & repairs" loading="lazy" decoding="async">
+                </picture>
+              </span>
+              <span class="category-card__details">
+                <span class="category-card__icon" aria-hidden="true"><img src="assets/icons/categories/vehicles.svg" width="22" height="22" alt=""></span>
+                <span class="category-card__copy">
+                  <span class="category-card__title" data-category-i18n="vehiclesTitle">Vehicles</span>
+                  <span class="category-card__description" data-category-i18n="vehiclesDescription">Cleaning, detailing & repairs</span>
+                </span>
+              </span>
+            </button>
+          </li>
+
+          <li class="categories__item" data-category="construction">
+            <button class="category-card" type="button" data-open-waitlist="customer" aria-label="Join the customer waitlist for construction services">
+              <span class="category-card__media">
+                <picture>
+                  <source type="image/webp" srcset="assets/images/categories/construction-360.webp 360w, assets/images/categories/construction-640.webp 640w, assets/images/categories/construction-900.webp 900w" sizes="(min-width: 1500px) 258px, (min-width: 1100px) 19vw, (min-width: 700px) 31vw, 45vw">
+                  <img class="category-card__image" src="assets/images/categories/construction-640.jpg" srcset="assets/images/categories/construction-360.jpg 360w, assets/images/categories/construction-640.jpg 640w, assets/images/categories/construction-900.jpg 900w" sizes="(min-width: 1500px) 258px, (min-width: 1100px) 19vw, (min-width: 700px) 31vw, 45vw" width="900" height="596" alt="Construction: Building & renovation" loading="lazy" decoding="async">
+                </picture>
+              </span>
+              <span class="category-card__details">
+                <span class="category-card__icon" aria-hidden="true"><img src="assets/icons/categories/construction.svg" width="22" height="22" alt=""></span>
+                <span class="category-card__copy">
+                  <span class="category-card__title" data-category-i18n="constructionTitle">Construction</span>
+                  <span class="category-card__description" data-category-i18n="constructionDescription">Building & renovation</span>
+                </span>
+              </span>
+            </button>
+          </li>
+          <li class="categories__item" data-category="care">
+            <button class="category-card" type="button" data-open-waitlist="customer" aria-label="Join the customer waitlist for personal care services">
+              <span class="category-card__media">
+                <picture>
+                  <source type="image/webp" srcset="assets/images/categories/care-360.webp 360w, assets/images/categories/care-640.webp 640w, assets/images/categories/care-900.webp 900w" sizes="(min-width: 1500px) 258px, (min-width: 1100px) 19vw, (min-width: 700px) 31vw, 45vw">
+                  <img class="category-card__image" src="assets/images/categories/care-640.jpg" srcset="assets/images/categories/care-360.jpg 360w, assets/images/categories/care-640.jpg 640w, assets/images/categories/care-900.jpg 900w" sizes="(min-width: 1500px) 258px, (min-width: 1100px) 19vw, (min-width: 700px) 31vw, 45vw" width="900" height="596" alt="Personal care: Support & personal services" loading="lazy" decoding="async">
+                </picture>
+              </span>
+              <span class="category-card__details">
+                <span class="category-card__icon" aria-hidden="true"><img src="assets/icons/categories/care.svg" width="22" height="22" alt=""></span>
+                <span class="category-card__copy">
+                  <span class="category-card__title" data-category-i18n="careTitle">Personal care</span>
+                  <span class="category-card__description" data-category-i18n="careDescription">Support & personal services</span>
+                </span>
+              </span>
+            </button>
+          </li>
+          <li class="categories__item" data-category="moving">
+            <button class="category-card" type="button" data-open-waitlist="customer" aria-label="Join the customer waitlist for moving & transport services">
+              <span class="category-card__media">
+                <picture>
+                  <source type="image/webp" srcset="assets/images/categories/moving-360.webp 360w, assets/images/categories/moving-640.webp 640w, assets/images/categories/moving-900.webp 900w" sizes="(min-width: 1500px) 258px, (min-width: 1100px) 19vw, (min-width: 700px) 31vw, 45vw">
+                  <img class="category-card__image" src="assets/images/categories/moving-640.jpg" srcset="assets/images/categories/moving-360.jpg 360w, assets/images/categories/moving-640.jpg 640w, assets/images/categories/moving-900.jpg 900w" sizes="(min-width: 1500px) 258px, (min-width: 1100px) 19vw, (min-width: 700px) 31vw, 45vw" width="900" height="596" alt="Moving & transport: Moving, delivery & transport" loading="lazy" decoding="async">
+                </picture>
+              </span>
+              <span class="category-card__details">
+                <span class="category-card__icon" aria-hidden="true"><img src="assets/icons/categories/moving.svg" width="22" height="22" alt=""></span>
+                <span class="category-card__copy">
+                  <span class="category-card__title" data-category-i18n="movingTitle">Moving & transport</span>
+                  <span class="category-card__description" data-category-i18n="movingDescription">Moving, delivery & transport</span>
+                </span>
+              </span>
+            </button>
+          </li>
+          <li class="categories__item" data-category="other">
+            <button class="category-card category-card--other" type="button" data-open-waitlist="customer" aria-label="Join the Loqelo customer waitlist to enquire about other services">
+              <span class="category-card__media category-card__media--brand" aria-hidden="true">
+                <span class="category-card__brand-shape category-card__brand-shape--first"></span>
+                <span class="category-card__brand-shape category-card__brand-shape--second"></span>
+                <img class="category-card__brand-mark" src="assets/logo/loqelo-icon.svg" width="74" height="74" alt="">
+                <span class="category-card__brand-caption">EVERYTHING YOUR PLACE NEEDS.</span>
+              </span>
+              <span class="category-card__details">
+                <span class="category-card__icon" aria-hidden="true"><img src="assets/logo/loqelo-icon.svg" width="22" height="22" alt=""></span>
+                <span class="category-card__copy">
+                  <span class="category-card__title" data-category-i18n="otherTitle">Other services</span>
+                  <span class="category-card__description" data-category-i18n="otherDescription">Tell us what you need</span>
+                </span>
+              </span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===========================================================
+         STAGE 06 - PLATFORM OVERVIEW (isolated)
+         Reference: user-provided three-row concept.
+         Real screens: extracted from Loqelo's supplied Figma UI/UX ZIP.
+         Audience stories are replaced with non-testimonial use cases.
+         =========================================================== -->
+    <section class="overview" id="platform-preview" aria-label="Why choose Loqelo and platform preview">
+      <div class="overview__inner container">
+        <div class="overview__row overview__row--value">
+          <div class="overview__heading">
+            <p class="overview__eyebrow" data-platform-i18n="whyLabel">WHY CHOOSE LOQELO</p>
+            <h2 data-platform-i18n="whyHeading">A better way to manage your space.</h2>
+          </div>
+          <div class="overview__value-grid">
+          <article class="value-tile">
+            <span class="value-tile__icon"><img src="assets/icons/why/trusted.svg" width="27" height="27" alt="" loading="lazy"></span>
+            <div class="value-tile__copy"><h3>Trusted professionals</h3><p>Profiles and reviews are part of the planned experience.</p></div>
+          </article>
+          <article class="value-tile">
+            <span class="value-tile__icon"><img src="assets/icons/why/range.svg" width="27" height="27" alt="" loading="lazy"></span>
+            <div class="value-tile__copy"><h3>Wide range of services</h3><p>From home and garden to office and more.</p></div>
+          </article>
+          <article class="value-tile">
+            <span class="value-tile__icon"><img src="assets/icons/why/secure.svg" width="27" height="27" alt="" loading="lazy"></span>
+            <div class="value-tile__copy"><h3>Easy & secure</h3><p>Designed for clear offers and confident decisions.</p></div>
+          </article>
+          <article class="value-tile">
+            <span class="value-tile__icon"><img src="assets/icons/why/home.svg" width="27" height="27" alt="" loading="lazy"></span>
+            <div class="value-tile__copy"><h3>One place for everything</h3><p>Explore needs and offers in one planned platform.</p></div>
+          </article>
+          </div>
+        </div>
+
+        <div class="overview__row overview__row--screens">
+          <div class="overview__heading">
+            <p class="overview__eyebrow" data-platform-i18n="previewLabel">PLATFORM PREVIEW</p>
+            <h2 data-platform-i18n="previewHeading">A look inside Loqelo</h2>
+            <p class="overview__intro" data-platform-i18n="previewText">A modern, easy-to-use platform for customers and service providers.</p>
+            <button class="overview__outline-link" type="button" data-preview-open="find"><span data-platform-i18n="moreShots">See more screenshots</span><span aria-hidden="true">→</span></button>
+          </div>
+          <div class="overview__screens-grid">
+            <button class="platform-tile" type="button" data-preview-open="find" aria-label="Open Customer home screen preview">
+              <span class="platform-tile__image">
+                <picture><source srcset="assets/images/platform/find-520.webp 520w, assets/images/platform/find-900.webp 900w, assets/images/platform/find-1300.webp 1300w" sizes="(min-width: 1140px) 230px, (min-width: 700px) 38vw, 90vw" type="image/webp">
+                  <img src="assets/images/platform/find-900.jpg" srcset="assets/images/platform/find-520.jpg 520w, assets/images/platform/find-900.jpg 900w, assets/images/platform/find-1300.jpg 1300w" sizes="(min-width: 1140px) 230px, (min-width: 700px) 38vw, 90vw" width="900" height="470" loading="lazy" decoding="async" alt="Screenshot from the original Loqelo customer home screen">
+                </picture>
+                <span class="platform-tile__zoom" aria-hidden="true">↗</span>
+              </span>
+              <span class="platform-tile__caption"><strong>Find services</strong><small>Describe what you need.</small></span>
+            </button>
+            <button class="platform-tile" type="button" data-preview-open="compare" aria-label="Open Job details and quotes screen preview">
+              <span class="platform-tile__image">
+                <picture><source srcset="assets/images/platform/compare-520.webp 520w, assets/images/platform/compare-900.webp 900w, assets/images/platform/compare-1300.webp 1300w" sizes="(min-width: 1140px) 230px, (min-width: 700px) 38vw, 90vw" type="image/webp">
+                  <img src="assets/images/platform/compare-900.jpg" srcset="assets/images/platform/compare-520.jpg 520w, assets/images/platform/compare-900.jpg 900w, assets/images/platform/compare-1300.jpg 1300w" sizes="(min-width: 1140px) 230px, (min-width: 700px) 38vw, 90vw" width="900" height="470" loading="lazy" decoding="async" alt="Screenshot from the original Loqelo job details and quotes screen">
+                </picture>
+                <span class="platform-tile__zoom" aria-hidden="true">↗</span>
+              </span>
+              <span class="platform-tile__caption"><strong>Compare offers</strong><small>Explore offers side by side.</small></span>
+            </button>
+            <button class="platform-tile" type="button" data-preview-open="manage" aria-label="Open Client dashboard screen preview">
+              <span class="platform-tile__image">
+                <picture><source srcset="assets/images/platform/manage-520.webp 520w, assets/images/platform/manage-900.webp 900w, assets/images/platform/manage-1300.webp 1300w" sizes="(min-width: 1140px) 230px, (min-width: 700px) 38vw, 90vw" type="image/webp">
+                  <img src="assets/images/platform/manage-900.jpg" srcset="assets/images/platform/manage-520.jpg 520w, assets/images/platform/manage-900.jpg 900w, assets/images/platform/manage-1300.jpg 1300w" sizes="(min-width: 1140px) 230px, (min-width: 700px) 38vw, 90vw" width="900" height="470" loading="lazy" decoding="async" alt="Screenshot from the original Loqelo client dashboard screen">
+                </picture>
+                <span class="platform-tile__zoom" aria-hidden="true">↗</span>
+              </span>
+              <span class="platform-tile__caption"><strong>Manage requests</strong><small>Keep track of your jobs.</small></span>
+            </button>
+            <button class="platform-tile platform-tile--mobile" type="button" data-preview-open="mobile-home" aria-label="Open mobile platform preview">
+              <span class="platform-tile__image platform-tile__image--phones">
+                <span class="platform-phone platform-phone--back"><img src="assets/images/platform/mobile-quotes.webp" width="585" height="1266" loading="lazy" alt=""></span>
+                <span class="platform-phone platform-phone--front"><img src="assets/images/platform/mobile-home.webp" width="585" height="1266" loading="lazy" alt=""></span>
+                <span class="platform-tile__zoom" aria-hidden="true">↗</span>
+              </span>
+              <span class="platform-tile__caption"><strong>On the go</strong><small>Available across devices.</small></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="overview__row overview__row--stories">
+          <div class="overview__heading overview__heading--stories">
+            <p class="overview__eyebrow" data-platform-i18n="storyLabel">WHO LOQELO IS FOR</p>
+            <h2 data-platform-i18n="storyHeading">Designed for everyday needs</h2>
+            <div class="overview__story-arrows" aria-label="Explore who Loqelo is for">
+              <button type="button" class="overview__story-arrow" data-stories-prev aria-label="Previous story">‹</button>
+              <button type="button" class="overview__story-arrow" data-stories-next aria-label="Next story">›</button>
+            </div>
+          </div>
+          <div class="overview__story-track" data-story-track aria-label="Use cases for Loqelo customers and service providers">
+            <article class="story-tile">
+              <p class="story-tile__quote" data-platform-i18n="useHome">Describe what needs doing, compare offers and find a suitable provider.</p>
+              <div class="story-tile__bottom"><span class="story-tile__symbol"><img src="assets/logo/loqelo-icon.svg" alt="" width="22" height="22"></span><div><strong data-platform-i18n="roleHome">For homeowners</strong><span data-platform-i18n="descHome">Home service needs</span></div></div>
+              <span class="story-tile__demo" data-platform-i18n="homeLabel">HOME</span>
+            </article>
+            <article class="story-tile">
+              <p class="story-tile__quote" data-platform-i18n="useProvider">Showcase your services and discover relevant local enquiries.</p>
+              <div class="story-tile__bottom"><span class="story-tile__symbol"><img src="assets/logo/loqelo-icon.svg" alt="" width="22" height="22"></span><div><strong data-platform-i18n="roleProvider">For service providers</strong><span data-platform-i18n="descProvider">Service opportunities</span></div></div>
+              <span class="story-tile__demo" data-platform-i18n="providerLabel">PROVIDER</span>
+            </article>
+            <article class="story-tile">
+              <p class="story-tile__quote" data-platform-i18n="useBusiness">Organise home, garden and office service needs in one place.</p>
+              <div class="story-tile__bottom"><span class="story-tile__symbol"><img src="assets/logo/loqelo-icon.svg" alt="" width="22" height="22"></span><div><strong data-platform-i18n="roleBusiness">For busy teams</strong><span data-platform-i18n="descBusiness">Workplace services</span></div></div>
+              <span class="story-tile__demo" data-platform-i18n="businessLabel">BUSINESS</span>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- =====================================================================
+         STAGE 05 / CUSTOMER AND SERVICE-PROVIDER WAITLIST
+         Design mirrors the supplied audience / forms / launch reference.
+         The approved visual assets are retained; Stage 06 now appears before
+         this signup section to explain the platform before conversion.
+         ===================================================================== -->
+    <section class="audience-section" aria-label="Who Loqelo is for">
+      <div class="audience-section__inner container">
+        <article class="audience-card" id="for-customers" aria-labelledby="customer-heading">
+          <picture class="audience-card__visual" aria-hidden="true">
+            <source type="image/webp" srcset="assets/images/audience/customer-480.webp?v=3 480w, assets/images/audience/customer-960.webp?v=3 960w" sizes="(min-width: 800px) 380px, 90vw">
+            <img src="assets/images/audience/customer-960.jpg?v=3" srcset="assets/images/audience/customer-480.jpg?v=3 480w, assets/images/audience/customer-960.jpg?v=3 960w" sizes="(min-width: 800px) 380px, 90vw" width="1016" height="682" loading="lazy" decoding="async" alt="">
+          </picture>
+          <div class="audience-card__shade" aria-hidden="true"></div>
+          <div class="audience-card__copy">
+            <p class="audience-card__label" data-stage05-i18n="forCustomers">FOR CUSTOMERS</p>
+            <h2 class="audience-card__title" id="customer-heading" data-stage05-i18n="customerTitle">Your place.<br>Your time.</h2>
+            <p class="audience-card__text" data-stage05-i18n="customerBody">From everyday tasks to bigger projects, find trusted professionals and get it done, stress-free.</p>
+            <button class="audience-card__cta" type="button" data-jump-to="customer">
+              <span data-stage05-i18n="customerCTA">Join as a Customer</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+            </button>
+          </div>
+          <div class="audience-panel audience-panel--customer" aria-hidden="true">
+            <ul class="audience-service-list" role="presentation">
+              <li class="audience-service-item"><span class="audience-service-icon">⌂</span><span>Home cleaning</span></li>
+              <li class="audience-service-item"><span class="audience-service-icon">✿</span><span>Garden maintenance</span></li>
+              <li class="audience-service-item"><span class="audience-service-icon">⚒</span><span>Repairs &amp; handyman</span></li>
+              <li class="audience-service-item"><span class="audience-service-icon">⇄</span><span>Moving &amp; transport</span></li>
+            </ul>
+          </div>
+        </article>
+        <article class="audience-card audience-card--provider" id="for-providers" aria-labelledby="provider-heading">
+          <picture class="audience-card__visual" aria-hidden="true">
+            <source type="image/webp" srcset="assets/images/audience/provider-480.webp?v=3 480w, assets/images/audience/provider-960.webp?v=3 960w" sizes="(min-width: 800px) 380px, 90vw">
+            <img src="assets/images/audience/provider-960.jpg?v=3" srcset="assets/images/audience/provider-480.jpg?v=3 480w, assets/images/audience/provider-960.jpg?v=3 960w" sizes="(min-width: 800px) 380px, 90vw" width="1017" height="682" loading="lazy" decoding="async" alt="">
+          </picture>
+          <div class="audience-card__shade" aria-hidden="true"></div>
+          <div class="audience-card__copy">
+            <p class="audience-card__label" data-stage05-i18n="forProviders">FOR SERVICE PROVIDERS</p>
+            <h2 class="audience-card__title" id="provider-heading" data-stage05-i18n="providerTitle">Grow your business.<br>On your terms.</h2>
+            <p class="audience-card__text" data-stage05-i18n="providerBody">Get new customers, showcase your skills, and grow your business with a platform built for professionals.</p>
+            <button class="audience-card__cta" type="button" data-jump-to="provider">
+              <span data-stage05-i18n="providerCTA">Join as a Service Provider</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+            </button>
+          </div>
+          <div class="audience-panel audience-panel--provider" aria-hidden="true">
+            <div class="provider-minihead">New opportunities <small>Grow your business</small></div>
+            <div class="provider-chart" aria-hidden="true">
+              <span class="provider-bar"></span>
+              <span class="provider-bar"></span>
+              <span class="provider-bar"></span>
+              <span class="provider-bar"></span>
+              <span class="provider-bar"></span>
+              <span class="provider-bar"></span>
+              <span class="provider-bar"></span>
+              <span class="provider-bar"></span>
+            </div>
+            <div class="provider-metrics" aria-hidden="true">
+              <span class="provider-pill">New enquiries</span>
+              <span class="provider-pill">Job matches</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="prelaunch" id="waitlist" aria-labelledby="waitlist-heading">
+      <div class="prelaunch__decor prelaunch__decor--one" aria-hidden="true"></div>
+      <div class="prelaunch__decor prelaunch__decor--two" aria-hidden="true"></div>
+      <div class="prelaunch__content container">
+        <div class="prelaunch__intro">
+          <p class="prelaunch__eyebrow" data-stage05-i18n="waitlistEyebrow">BE THE FIRST TO KNOW</p>
+          <h2 class="prelaunch__title" id="waitlist-heading" data-stage05-i18n="waitlistTitle">Join the Loqelo waitlist</h2>
+          <p class="prelaunch__subtitle" data-stage05-i18n="waitlistBody">Get launch updates and be among the first to know. Planned launch: February 2027.</p>
+        </div>
+        <div class="prelaunch__forms">
+          <form class="signup-card" data-signup-role="customer" data-endpoint="/api/signup.php" id="customer-signup" aria-label="Customer waitlist signup"><input class="sr-only" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <div class="signup-card__head">
+              <span class="signup-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.6 8.1-8 10-4.4-1.9-8-5-8-10V6z"/><path d="m9 12 2 2 4-4"/></svg></span>
+              <span><strong data-stage05-i18n="customerFormTitle">I'm a customer</strong><small data-stage05-i18n="customerFormSub">Looking for trusted professionals.</small></span>
+            </div>
+            <label for="customer-email" data-stage05-i18n="emailLabel">Email address</label>
+            <input id="customer-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" maxlength="254" required>
+            <label for="customer-country" data-stage05-i18n="customerCountryLabel">Country of residence</label>
+            <select id="customer-country" name="country" required>
+              <option value="" data-stage05-i18n="selectCountry">Select country</option>
+                  <option value="AF">Afghanistan</option>
+                  <option value="AL">Albania</option>
+                  <option value="DZ">Algeria</option>
+                  <option value="AS">American Samoa</option>
+                  <option value="AD">Andorra</option>
+                  <option value="AO">Angola</option>
+                  <option value="AI">Anguilla</option>
+                  <option value="AQ">Antarctica</option>
+                  <option value="AG">Antigua and Barbuda</option>
+                  <option value="AR">Argentina</option>
+                  <option value="AM">Armenia</option>
+                  <option value="AW">Aruba</option>
+                  <option value="AU">Australia</option>
+                  <option value="AT">Austria</option>
+                  <option value="AZ">Azerbaijan</option>
+                  <option value="BS">Bahamas</option>
+                  <option value="BH">Bahrain</option>
+                  <option value="BD">Bangladesh</option>
+                  <option value="BB">Barbados</option>
+                  <option value="BY">Belarus</option>
+                  <option value="BE">Belgium</option>
+                  <option value="BZ">Belize</option>
+                  <option value="BJ">Benin</option>
+                  <option value="BM">Bermuda</option>
+                  <option value="BT">Bhutan</option>
+                  <option value="BO">Bolivia, Plurinational State of</option>
+                  <option value="BQ">Bonaire, Sint Eustatius and Saba</option>
+                  <option value="BA">Bosnia and Herzegovina</option>
+                  <option value="BW">Botswana</option>
+                  <option value="BV">Bouvet Island</option>
+                  <option value="BR">Brazil</option>
+                  <option value="IO">British Indian Ocean Territory</option>
+                  <option value="BN">Brunei Darussalam</option>
+                  <option value="BG">Bulgaria</option>
+                  <option value="BF">Burkina Faso</option>
+                  <option value="BI">Burundi</option>
+                  <option value="CV">Cabo Verde</option>
+                  <option value="KH">Cambodia</option>
+                  <option value="CM">Cameroon</option>
+                  <option value="CA">Canada</option>
+                  <option value="KY">Cayman Islands</option>
+                  <option value="CF">Central African Republic</option>
+                  <option value="TD">Chad</option>
+                  <option value="CL">Chile</option>
+                  <option value="CN">China</option>
+                  <option value="CX">Christmas Island</option>
+                  <option value="CC">Cocos (Keeling) Islands</option>
+                  <option value="CO">Colombia</option>
+                  <option value="KM">Comoros</option>
+                  <option value="CG">Congo</option>
+                  <option value="CD">Congo, The Democratic Republic of the</option>
+                  <option value="CK">Cook Islands</option>
+                  <option value="CR">Costa Rica</option>
+                  <option value="HR">Croatia</option>
+                  <option value="CU">Cuba</option>
+                  <option value="CW">Curaçao</option>
+                  <option value="CY">Cyprus</option>
+                  <option value="CZ">Czechia</option>
+                  <option value="CI">Côte d&#x27;Ivoire</option>
+                  <option value="DK">Denmark</option>
+                  <option value="DJ">Djibouti</option>
+                  <option value="DM">Dominica</option>
+                  <option value="DO">Dominican Republic</option>
+                  <option value="EC">Ecuador</option>
+                  <option value="EG">Egypt</option>
+                  <option value="SV">El Salvador</option>
+                  <option value="GQ">Equatorial Guinea</option>
+                  <option value="ER">Eritrea</option>
+                  <option value="EE">Estonia</option>
+                  <option value="SZ">Eswatini</option>
+                  <option value="ET">Ethiopia</option>
+                  <option value="FK">Falkland Islands (Malvinas)</option>
+                  <option value="FO">Faroe Islands</option>
+                  <option value="FJ">Fiji</option>
+                  <option value="FI">Finland</option>
+                  <option value="FR">France</option>
+                  <option value="GF">French Guiana</option>
+                  <option value="PF">French Polynesia</option>
+                  <option value="TF">French Southern Territories</option>
+                  <option value="GA">Gabon</option>
+                  <option value="GM">Gambia</option>
+                  <option value="GE">Georgia</option>
+                  <option value="DE">Germany</option>
+                  <option value="GH">Ghana</option>
+                  <option value="GI">Gibraltar</option>
+                  <option value="GR">Greece</option>
+                  <option value="GL">Greenland</option>
+                  <option value="GD">Grenada</option>
+                  <option value="GP">Guadeloupe</option>
+                  <option value="GU">Guam</option>
+                  <option value="GT">Guatemala</option>
+                  <option value="GG">Guernsey</option>
+                  <option value="GN">Guinea</option>
+                  <option value="GW">Guinea-Bissau</option>
+                  <option value="GY">Guyana</option>
+                  <option value="HT">Haiti</option>
+                  <option value="HM">Heard Island and McDonald Islands</option>
+                  <option value="VA">Holy See (Vatican City State)</option>
+                  <option value="HN">Honduras</option>
+                  <option value="HK">Hong Kong</option>
+                  <option value="HU">Hungary</option>
+                  <option value="IS">Iceland</option>
+                  <option value="IN">India</option>
+                  <option value="ID">Indonesia</option>
+                  <option value="IR">Iran, Islamic Republic of</option>
+                  <option value="IQ">Iraq</option>
+                  <option value="IE">Ireland</option>
+                  <option value="IM">Isle of Man</option>
+                  <option value="IL">Israel</option>
+                  <option value="IT">Italy</option>
+                  <option value="JM">Jamaica</option>
+                  <option value="JP">Japan</option>
+                  <option value="JE">Jersey</option>
+                  <option value="JO">Jordan</option>
+                  <option value="KZ">Kazakhstan</option>
+                  <option value="KE">Kenya</option>
+                  <option value="KI">Kiribati</option>
+                  <option value="KP">Korea, Democratic People&#x27;s Republic of</option>
+                  <option value="KR">Korea, Republic of</option>
+                  <option value="KW">Kuwait</option>
+                  <option value="KG">Kyrgyzstan</option>
+                  <option value="LA">Lao People&#x27;s Democratic Republic</option>
+                  <option value="LV">Latvia</option>
+                  <option value="LB">Lebanon</option>
+                  <option value="LS">Lesotho</option>
+                  <option value="LR">Liberia</option>
+                  <option value="LY">Libya</option>
+                  <option value="LI">Liechtenstein</option>
+                  <option value="LT">Lithuania</option>
+                  <option value="LU">Luxembourg</option>
+                  <option value="MO">Macao</option>
+                  <option value="MG">Madagascar</option>
+                  <option value="MW">Malawi</option>
+                  <option value="MY">Malaysia</option>
+                  <option value="MV">Maldives</option>
+                  <option value="ML">Mali</option>
+                  <option value="MT">Malta</option>
+                  <option value="MH">Marshall Islands</option>
+                  <option value="MQ">Martinique</option>
+                  <option value="MR">Mauritania</option>
+                  <option value="MU">Mauritius</option>
+                  <option value="YT">Mayotte</option>
+                  <option value="MX">Mexico</option>
+                  <option value="FM">Micronesia, Federated States of</option>
+                  <option value="MD">Moldova, Republic of</option>
+                  <option value="MC">Monaco</option>
+                  <option value="MN">Mongolia</option>
+                  <option value="ME">Montenegro</option>
+                  <option value="MS">Montserrat</option>
+                  <option value="MA">Morocco</option>
+                  <option value="MZ">Mozambique</option>
+                  <option value="MM">Myanmar</option>
+                  <option value="NA">Namibia</option>
+                  <option value="NR">Nauru</option>
+                  <option value="NP">Nepal</option>
+                  <option value="NL">Netherlands</option>
+                  <option value="NC">New Caledonia</option>
+                  <option value="NZ">New Zealand</option>
+                  <option value="NI">Nicaragua</option>
+                  <option value="NE">Niger</option>
+                  <option value="NG">Nigeria</option>
+                  <option value="NU">Niue</option>
+                  <option value="NF">Norfolk Island</option>
+                  <option value="MK">North Macedonia</option>
+                  <option value="MP">Northern Mariana Islands</option>
+                  <option value="NO">Norway</option>
+                  <option value="OM">Oman</option>
+                  <option value="PK">Pakistan</option>
+                  <option value="PW">Palau</option>
+                  <option value="PS">Palestine, State of</option>
+                  <option value="PA">Panama</option>
+                  <option value="PG">Papua New Guinea</option>
+                  <option value="PY">Paraguay</option>
+                  <option value="PE">Peru</option>
+                  <option value="PH">Philippines</option>
+                  <option value="PN">Pitcairn</option>
+                  <option value="PL">Poland</option>
+                  <option value="PT">Portugal</option>
+                  <option value="PR">Puerto Rico</option>
+                  <option value="QA">Qatar</option>
+                  <option value="RO">Romania</option>
+                  <option value="RU">Russian Federation</option>
+                  <option value="RW">Rwanda</option>
+                  <option value="RE">Réunion</option>
+                  <option value="BL">Saint Barthélemy</option>
+                  <option value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
+                  <option value="KN">Saint Kitts and Nevis</option>
+                  <option value="LC">Saint Lucia</option>
+                  <option value="MF">Saint Martin (French part)</option>
+                  <option value="PM">Saint Pierre and Miquelon</option>
+                  <option value="VC">Saint Vincent and the Grenadines</option>
+                  <option value="WS">Samoa</option>
+                  <option value="SM">San Marino</option>
+                  <option value="ST">Sao Tome and Principe</option>
+                  <option value="SA">Saudi Arabia</option>
+                  <option value="SN">Senegal</option>
+                  <option value="RS">Serbia</option>
+                  <option value="SC">Seychelles</option>
+                  <option value="SL">Sierra Leone</option>
+                  <option value="SG">Singapore</option>
+                  <option value="SX">Sint Maarten (Dutch part)</option>
+                  <option value="SK">Slovakia</option>
+                  <option value="SI">Slovenia</option>
+                  <option value="SB">Solomon Islands</option>
+                  <option value="SO">Somalia</option>
+                  <option value="ZA">South Africa</option>
+                  <option value="GS">South Georgia and the South Sandwich Islands</option>
+                  <option value="SS">South Sudan</option>
+                  <option value="ES">Spain</option>
+                  <option value="LK">Sri Lanka</option>
+                  <option value="SD">Sudan</option>
+                  <option value="SR">Suriname</option>
+                  <option value="SJ">Svalbard and Jan Mayen</option>
+                  <option value="SE">Sweden</option>
+                  <option value="CH">Switzerland</option>
+                  <option value="SY">Syrian Arab Republic</option>
+                  <option value="TW">Taiwan, Province of China</option>
+                  <option value="TJ">Tajikistan</option>
+                  <option value="TZ">Tanzania, United Republic of</option>
+                  <option value="TH">Thailand</option>
+                  <option value="TL">Timor-Leste</option>
+                  <option value="TG">Togo</option>
+                  <option value="TK">Tokelau</option>
+                  <option value="TO">Tonga</option>
+                  <option value="TT">Trinidad and Tobago</option>
+                  <option value="TN">Tunisia</option>
+                  <option value="TM">Turkmenistan</option>
+                  <option value="TC">Turks and Caicos Islands</option>
+                  <option value="TV">Tuvalu</option>
+                  <option value="TR">Türkiye</option>
+                  <option value="UG">Uganda</option>
+                  <option value="UA">Ukraine</option>
+                  <option value="AE">United Arab Emirates</option>
+                  <option value="GB">United Kingdom</option>
+                  <option value="US">United States</option>
+                  <option value="UM">United States Minor Outlying Islands</option>
+                  <option value="UY">Uruguay</option>
+                  <option value="UZ">Uzbekistan</option>
+                  <option value="VU">Vanuatu</option>
+                  <option value="VE">Venezuela, Bolivarian Republic of</option>
+                  <option value="VN">Viet Nam</option>
+                  <option value="VG">Virgin Islands, British</option>
+                  <option value="VI">Virgin Islands, U.S.</option>
+                  <option value="WF">Wallis and Futuna</option>
+                  <option value="EH">Western Sahara</option>
+                  <option value="YE">Yemen</option>
+                  <option value="ZM">Zambia</option>
+                  <option value="ZW">Zimbabwe</option>
+                  <option value="AX">Åland Islands</option>
+            </select>
+            <fieldset class="signup-card__type" aria-label="Registration type (optional)">
+              <legend class="sr-only">Individual or business (optional)</legend>
+              <label><input type="radio" name="accountType" value="individual"><span data-stage05-i18n="individual">Individual</span></label>
+              <label><input type="radio" name="accountType" value="business"><span data-stage05-i18n="business">Business</span></label>
+            </fieldset>
+            <button class="signup-card__submit" type="submit"><span data-stage05-i18n="customerSubmit">Join Customer Waitlist</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+            <p class="signup-card__result" role="status" aria-live="polite" hidden></p>
+          </form>
+          <form class="signup-card" data-signup-role="provider" data-endpoint="/api/signup.php" id="provider-signup" aria-label="Provider waitlist signup"><input class="sr-only" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <div class="signup-card__head">
+              <span class="signup-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.6 8.1-8 10-4.4-1.9-8-5-8-10V6z"/><path d="m9 12 2 2 4-4"/></svg></span>
+              <span><strong data-stage05-i18n="providerFormTitle">I'm a service provider</strong><small data-stage05-i18n="providerFormSub">I offer professional services.</small></span>
+            </div>
+            <label for="provider-email" data-stage05-i18n="emailLabel">Email address</label>
+            <input id="provider-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" maxlength="254" required>
+            <label for="provider-country" data-stage05-i18n="providerCountryLabel">Country where you provide services</label>
+            <select id="provider-country" name="country" required>
+              <option value="" data-stage05-i18n="selectCountry">Select country</option>
+                  <option value="AF">Afghanistan</option>
+                  <option value="AL">Albania</option>
+                  <option value="DZ">Algeria</option>
+                  <option value="AS">American Samoa</option>
+                  <option value="AD">Andorra</option>
+                  <option value="AO">Angola</option>
+                  <option value="AI">Anguilla</option>
+                  <option value="AQ">Antarctica</option>
+                  <option value="AG">Antigua and Barbuda</option>
+                  <option value="AR">Argentina</option>
+                  <option value="AM">Armenia</option>
+                  <option value="AW">Aruba</option>
+                  <option value="AU">Australia</option>
+                  <option value="AT">Austria</option>
+                  <option value="AZ">Azerbaijan</option>
+                  <option value="BS">Bahamas</option>
+                  <option value="BH">Bahrain</option>
+                  <option value="BD">Bangladesh</option>
+                  <option value="BB">Barbados</option>
+                  <option value="BY">Belarus</option>
+                  <option value="BE">Belgium</option>
+                  <option value="BZ">Belize</option>
+                  <option value="BJ">Benin</option>
+                  <option value="BM">Bermuda</option>
+                  <option value="BT">Bhutan</option>
+                  <option value="BO">Bolivia, Plurinational State of</option>
+                  <option value="BQ">Bonaire, Sint Eustatius and Saba</option>
+                  <option value="BA">Bosnia and Herzegovina</option>
+                  <option value="BW">Botswana</option>
+                  <option value="BV">Bouvet Island</option>
+                  <option value="BR">Brazil</option>
+                  <option value="IO">British Indian Ocean Territory</option>
+                  <option value="BN">Brunei Darussalam</option>
+                  <option value="BG">Bulgaria</option>
+                  <option value="BF">Burkina Faso</option>
+                  <option value="BI">Burundi</option>
+                  <option value="CV">Cabo Verde</option>
+                  <option value="KH">Cambodia</option>
+                  <option value="CM">Cameroon</option>
+                  <option value="CA">Canada</option>
+                  <option value="KY">Cayman Islands</option>
+                  <option value="CF">Central African Republic</option>
+                  <option value="TD">Chad</option>
+                  <option value="CL">Chile</option>
+                  <option value="CN">China</option>
+                  <option value="CX">Christmas Island</option>
+                  <option value="CC">Cocos (Keeling) Islands</option>
+                  <option value="CO">Colombia</option>
+                  <option value="KM">Comoros</option>
+                  <option value="CG">Congo</option>
+                  <option value="CD">Congo, The Democratic Republic of the</option>
+                  <option value="CK">Cook Islands</option>
+                  <option value="CR">Costa Rica</option>
+                  <option value="HR">Croatia</option>
+                  <option value="CU">Cuba</option>
+                  <option value="CW">Curaçao</option>
+                  <option value="CY">Cyprus</option>
+                  <option value="CZ">Czechia</option>
+                  <option value="CI">Côte d&#x27;Ivoire</option>
+                  <option value="DK">Denmark</option>
+                  <option value="DJ">Djibouti</option>
+                  <option value="DM">Dominica</option>
+                  <option value="DO">Dominican Republic</option>
+                  <option value="EC">Ecuador</option>
+                  <option value="EG">Egypt</option>
+                  <option value="SV">El Salvador</option>
+                  <option value="GQ">Equatorial Guinea</option>
+                  <option value="ER">Eritrea</option>
+                  <option value="EE">Estonia</option>
+                  <option value="SZ">Eswatini</option>
+                  <option value="ET">Ethiopia</option>
+                  <option value="FK">Falkland Islands (Malvinas)</option>
+                  <option value="FO">Faroe Islands</option>
+                  <option value="FJ">Fiji</option>
+                  <option value="FI">Finland</option>
+                  <option value="FR">France</option>
+                  <option value="GF">French Guiana</option>
+                  <option value="PF">French Polynesia</option>
+                  <option value="TF">French Southern Territories</option>
+                  <option value="GA">Gabon</option>
+                  <option value="GM">Gambia</option>
+                  <option value="GE">Georgia</option>
+                  <option value="DE">Germany</option>
+                  <option value="GH">Ghana</option>
+                  <option value="GI">Gibraltar</option>
+                  <option value="GR">Greece</option>
+                  <option value="GL">Greenland</option>
+                  <option value="GD">Grenada</option>
+                  <option value="GP">Guadeloupe</option>
+                  <option value="GU">Guam</option>
+                  <option value="GT">Guatemala</option>
+                  <option value="GG">Guernsey</option>
+                  <option value="GN">Guinea</option>
+                  <option value="GW">Guinea-Bissau</option>
+                  <option value="GY">Guyana</option>
+                  <option value="HT">Haiti</option>
+                  <option value="HM">Heard Island and McDonald Islands</option>
+                  <option value="VA">Holy See (Vatican City State)</option>
+                  <option value="HN">Honduras</option>
+                  <option value="HK">Hong Kong</option>
+                  <option value="HU">Hungary</option>
+                  <option value="IS">Iceland</option>
+                  <option value="IN">India</option>
+                  <option value="ID">Indonesia</option>
+                  <option value="IR">Iran, Islamic Republic of</option>
+                  <option value="IQ">Iraq</option>
+                  <option value="IE">Ireland</option>
+                  <option value="IM">Isle of Man</option>
+                  <option value="IL">Israel</option>
+                  <option value="IT">Italy</option>
+                  <option value="JM">Jamaica</option>
+                  <option value="JP">Japan</option>
+                  <option value="JE">Jersey</option>
+                  <option value="JO">Jordan</option>
+                  <option value="KZ">Kazakhstan</option>
+                  <option value="KE">Kenya</option>
+                  <option value="KI">Kiribati</option>
+                  <option value="KP">Korea, Democratic People&#x27;s Republic of</option>
+                  <option value="KR">Korea, Republic of</option>
+                  <option value="KW">Kuwait</option>
+                  <option value="KG">Kyrgyzstan</option>
+                  <option value="LA">Lao People&#x27;s Democratic Republic</option>
+                  <option value="LV">Latvia</option>
+                  <option value="LB">Lebanon</option>
+                  <option value="LS">Lesotho</option>
+                  <option value="LR">Liberia</option>
+                  <option value="LY">Libya</option>
+                  <option value="LI">Liechtenstein</option>
+                  <option value="LT">Lithuania</option>
+                  <option value="LU">Luxembourg</option>
+                  <option value="MO">Macao</option>
+                  <option value="MG">Madagascar</option>
+                  <option value="MW">Malawi</option>
+                  <option value="MY">Malaysia</option>
+                  <option value="MV">Maldives</option>
+                  <option value="ML">Mali</option>
+                  <option value="MT">Malta</option>
+                  <option value="MH">Marshall Islands</option>
+                  <option value="MQ">Martinique</option>
+                  <option value="MR">Mauritania</option>
+                  <option value="MU">Mauritius</option>
+                  <option value="YT">Mayotte</option>
+                  <option value="MX">Mexico</option>
+                  <option value="FM">Micronesia, Federated States of</option>
+                  <option value="MD">Moldova, Republic of</option>
+                  <option value="MC">Monaco</option>
+                  <option value="MN">Mongolia</option>
+                  <option value="ME">Montenegro</option>
+                  <option value="MS">Montserrat</option>
+                  <option value="MA">Morocco</option>
+                  <option value="MZ">Mozambique</option>
+                  <option value="MM">Myanmar</option>
+                  <option value="NA">Namibia</option>
+                  <option value="NR">Nauru</option>
+                  <option value="NP">Nepal</option>
+                  <option value="NL">Netherlands</option>
+                  <option value="NC">New Caledonia</option>
+                  <option value="NZ">New Zealand</option>
+                  <option value="NI">Nicaragua</option>
+                  <option value="NE">Niger</option>
+                  <option value="NG">Nigeria</option>
+                  <option value="NU">Niue</option>
+                  <option value="NF">Norfolk Island</option>
+                  <option value="MK">North Macedonia</option>
+                  <option value="MP">Northern Mariana Islands</option>
+                  <option value="NO">Norway</option>
+                  <option value="OM">Oman</option>
+                  <option value="PK">Pakistan</option>
+                  <option value="PW">Palau</option>
+                  <option value="PS">Palestine, State of</option>
+                  <option value="PA">Panama</option>
+                  <option value="PG">Papua New Guinea</option>
+                  <option value="PY">Paraguay</option>
+                  <option value="PE">Peru</option>
+                  <option value="PH">Philippines</option>
+                  <option value="PN">Pitcairn</option>
+                  <option value="PL">Poland</option>
+                  <option value="PT">Portugal</option>
+                  <option value="PR">Puerto Rico</option>
+                  <option value="QA">Qatar</option>
+                  <option value="RO">Romania</option>
+                  <option value="RU">Russian Federation</option>
+                  <option value="RW">Rwanda</option>
+                  <option value="RE">Réunion</option>
+                  <option value="BL">Saint Barthélemy</option>
+                  <option value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
+                  <option value="KN">Saint Kitts and Nevis</option>
+                  <option value="LC">Saint Lucia</option>
+                  <option value="MF">Saint Martin (French part)</option>
+                  <option value="PM">Saint Pierre and Miquelon</option>
+                  <option value="VC">Saint Vincent and the Grenadines</option>
+                  <option value="WS">Samoa</option>
+                  <option value="SM">San Marino</option>
+                  <option value="ST">Sao Tome and Principe</option>
+                  <option value="SA">Saudi Arabia</option>
+                  <option value="SN">Senegal</option>
+                  <option value="RS">Serbia</option>
+                  <option value="SC">Seychelles</option>
+                  <option value="SL">Sierra Leone</option>
+                  <option value="SG">Singapore</option>
+                  <option value="SX">Sint Maarten (Dutch part)</option>
+                  <option value="SK">Slovakia</option>
+                  <option value="SI">Slovenia</option>
+                  <option value="SB">Solomon Islands</option>
+                  <option value="SO">Somalia</option>
+                  <option value="ZA">South Africa</option>
+                  <option value="GS">South Georgia and the South Sandwich Islands</option>
+                  <option value="SS">South Sudan</option>
+                  <option value="ES">Spain</option>
+                  <option value="LK">Sri Lanka</option>
+                  <option value="SD">Sudan</option>
+                  <option value="SR">Suriname</option>
+                  <option value="SJ">Svalbard and Jan Mayen</option>
+                  <option value="SE">Sweden</option>
+                  <option value="CH">Switzerland</option>
+                  <option value="SY">Syrian Arab Republic</option>
+                  <option value="TW">Taiwan, Province of China</option>
+                  <option value="TJ">Tajikistan</option>
+                  <option value="TZ">Tanzania, United Republic of</option>
+                  <option value="TH">Thailand</option>
+                  <option value="TL">Timor-Leste</option>
+                  <option value="TG">Togo</option>
+                  <option value="TK">Tokelau</option>
+                  <option value="TO">Tonga</option>
+                  <option value="TT">Trinidad and Tobago</option>
+                  <option value="TN">Tunisia</option>
+                  <option value="TM">Turkmenistan</option>
+                  <option value="TC">Turks and Caicos Islands</option>
+                  <option value="TV">Tuvalu</option>
+                  <option value="TR">Türkiye</option>
+                  <option value="UG">Uganda</option>
+                  <option value="UA">Ukraine</option>
+                  <option value="AE">United Arab Emirates</option>
+                  <option value="GB">United Kingdom</option>
+                  <option value="US">United States</option>
+                  <option value="UM">United States Minor Outlying Islands</option>
+                  <option value="UY">Uruguay</option>
+                  <option value="UZ">Uzbekistan</option>
+                  <option value="VU">Vanuatu</option>
+                  <option value="VE">Venezuela, Bolivarian Republic of</option>
+                  <option value="VN">Viet Nam</option>
+                  <option value="VG">Virgin Islands, British</option>
+                  <option value="VI">Virgin Islands, U.S.</option>
+                  <option value="WF">Wallis and Futuna</option>
+                  <option value="EH">Western Sahara</option>
+                  <option value="YE">Yemen</option>
+                  <option value="ZM">Zambia</option>
+                  <option value="ZW">Zimbabwe</option>
+                  <option value="AX">Åland Islands</option>
+            </select>
+            <fieldset class="signup-card__type" aria-label="Registration type (optional)">
+              <legend class="sr-only">Individual or business (optional)</legend>
+              <label><input type="radio" name="accountType" value="individual"><span data-stage05-i18n="individual">Individual</span></label>
+              <label><input type="radio" name="accountType" value="business"><span data-stage05-i18n="business">Business</span></label>
+            </fieldset>
+            <button class="signup-card__submit" type="submit"><span data-stage05-i18n="providerSubmit">Join Provider Waitlist</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+            <p class="signup-card__result" role="status" aria-live="polite" hidden></p>
+          </form>
+        </div>
+        <div class="prelaunch__consent">
+          <label class="prelaunch__consent-label" for="waitlist-marketing-consent">
+            <input id="waitlist-marketing-consent" type="checkbox">
+            <span data-stage05-i18n="consent">I agree to receive updates about Loqelo's launch and project news. I understand I can unsubscribe at any time.</span>
+          </label>
+          <p class="prelaunch__privacy" data-stage05-i18n="privacyNote">Your information will be used only for the waitlist and launch communications.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="launch-band" id="launch" aria-labelledby="launch-heading">
+      <div class="launch-band__shine launch-band__shine--left" aria-hidden="true"></div>
+      <div class="launch-band__shine launch-band__shine--right" aria-hidden="true"></div>
+      <div class="launch-band__inner container">
+        <div class="launch-band__brand-art" aria-hidden="true"><img src="assets/logo/loqelo-icon.svg" alt="" width="115" height="115" loading="lazy"></div>
+        <div class="launch-band__copy">
+          <p class="launch-band__eyebrow" data-stage05-i18n="launchEyebrow">LAUNCHING SOON</p>
+          <h2 class="launch-band__title" id="launch-heading">February 2027</h2>
+          <p class="launch-band__subtitle" data-stage05-i18n="launchDescription">A new way to get things done is on the way.</p>
+        </div>
+        <div class="launch-band__countdown" role="timer" aria-label="Time until the beginning of February 2027">
+          <div class="launch-band__unit"><strong data-countdown="days">--</strong><span data-stage05-i18n="days">Days</span></div>
+          <div class="launch-band__unit"><strong data-countdown="hours">--</strong><span data-stage05-i18n="hours">Hours</span></div>
+          <div class="launch-band__unit"><strong data-countdown="minutes">--</strong><span data-stage05-i18n="minutes">Minutes</span></div>
+          <div class="launch-band__unit"><strong data-countdown="seconds">--</strong><span data-stage05-i18n="seconds">Seconds</span></div>
+          <p class="launch-band__disclaimer" data-stage05-i18n="countdownDisclaimer">Countdown to February 1; exact launch date to be announced.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================================
+         STAGE 07 — FAQ AND FINAL CALL TO ACTION
+         Reference-based design; isolated CSS/JS, no edits to Stages 01–06.
+         FAQ statements follow the client pre-launch brief. The site is
+         NOT yet a live services marketplace, so no live-booking claims.
+         ============================================================= -->
+    <section class="faq-finale" id="faq" aria-labelledby="faq-title">
+      <div class="faq-finale__inner container">
+        <div class="faq-finale__panel">
+          <div class="faq-finale__copy">
+            <p class="faq-finale__eyebrow" data-faq-i18n="faqEyebrow">FREQUENTLY ASKED QUESTIONS</p>
+            <h2 class="faq-finale__heading" id="faq-title" data-faq-i18n="faqHeading">Got questions?<br>We have answers.</h2>
+            <p class="faq-finale__intro" data-faq-i18n="faqIntro">Everything you need to know about Loqelo and our upcoming launch.</p>
+            <button class="faq-finale__all" data-faq-more type="button" aria-expanded="false" aria-controls="faq-extra">
+              <span data-faq-i18n="allFAQs">View all FAQs</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg>
+            </button>
+          </div>
+
+          <div class="faq-finale__questions" aria-label="Frequently asked questions">
+            <details class="faq-item">
+              <summary><span data-faq-i18n="q1">What is Loqelo?</span><span class="faq-item__plus" aria-hidden="true"></span></summary>
+              <p data-faq-i18n="a1">Loqelo is a planned marketplace connecting customers with service providers for home, garden and office needs. Customers will be able to describe a job, receive offers and choose a provider.</p>
+            </details>
+            <details class="faq-item">
+              <summary><span data-faq-i18n="q2">When will Loqelo launch?</span><span class="faq-item__plus" aria-hidden="true"></span></summary>
+              <p data-faq-i18n="a2">Loqelo is planning to launch in February 2027. An exact launch date has not yet been announced. Join the waitlist for updates.</p>
+            </details>
+            <details class="faq-item">
+              <summary><span data-faq-i18n="q3">Is Loqelo available worldwide?</span><span class="faq-item__plus" aria-hidden="true"></span></summary>
+              <p data-faq-i18n="a3">Loqelo is collecting pre-launch interest from multiple countries. The countries where services will be available at launch have not yet been confirmed.</p>
+            </details>
+            <details class="faq-item">
+              <summary><span data-faq-i18n="q4">How do I become a service provider?</span><span class="faq-item__plus" aria-hidden="true"></span></summary>
+              <p data-faq-i18n="a4">Choose “Join as a Provider,” enter your email address and service country, and consent to launch updates. This joins the pre-launch interest list; platform registration will come later.</p>
+            </details>
+            <div class="faq-finale__extra" id="faq-extra" hidden>
+              <details class="faq-item">
+                <summary><span data-faq-i18n="q5">What services will I find?</span><span class="faq-item__plus" aria-hidden="true"></span></summary>
+                <p data-faq-i18n="a5">Loqelo is being developed around home, garden and office needs, with additional service categories previewed in the platform designs. Final launch coverage may vary.</p>
+              </details>
+              <details class="faq-item">
+                <summary><span data-faq-i18n="q6">What details does the waitlist require?</span><span class="faq-item__plus" aria-hidden="true"></span></summary>
+                <p data-faq-i18n="a6">An email address and country are required. You can optionally indicate whether you are signing up as an individual or a business. Consent to project updates is separate and required to subscribe.</p>
+              </details>
+            </div>
+          </div>
+          <img class="faq-finale__art" src="assets/logo/loqelo-icon.svg" width="400" height="400" alt="" loading="lazy" decoding="async" aria-hidden="true">
+        </div>
+
+        <div class="faq-cta" aria-labelledby="faq-cta-title">
+          <picture class="faq-cta__visual">
+            <source type="image/webp" srcset="assets/images/video/loqelo-story-640.webp 640w, assets/images/video/loqelo-story-1040.webp 1040w, assets/images/video/loqelo-story-1280.webp 1280w" sizes="(min-width: 900px) 42vw, 100vw">
+            <img src="assets/images/video/loqelo-story-1040.jpg" srcset="assets/images/video/loqelo-story-640.jpg 640w, assets/images/video/loqelo-story-1040.jpg 1040w, assets/images/video/loqelo-story-1280.jpg 1280w" sizes="(min-width: 900px) 42vw, 100vw" width="1280" height="720" loading="lazy" decoding="async" alt="Modern home exterior with warm landscaping and bright daylight">
+          </picture>
+          <div class="faq-cta__content">
+            <h2 id="faq-cta-title" data-faq-i18n="ctaHeading">Be part of something bigger.</h2>
+            <p data-faq-i18n="ctaBody">Join the waitlist and help us build a global marketplace for home, garden and office services.</p>
+            <div class="faq-cta__actions">
+              <button type="button" class="faq-cta__button faq-cta__button--primary" data-jump-to="customer"><span data-faq-i18n="ctaCustomer">Join as a Customer</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+              <button type="button" class="faq-cta__button faq-cta__button--outline" data-jump-to="provider"><span data-faq-i18n="ctaProvider">Join as a Provider</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+            </div>
+          </div>
+          <div class="faq-cta__corner-brand" aria-hidden="true"><img src="assets/logo/loqelo-icon.svg" width="210" height="210" alt=""></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =============================================================
+       STAGE 08: SHARED FOOTER — ready for a CMS/server include
+       The earlier homepage sections are locked and intentionally unchanged.
+       Contacts/social/legal URLs require owner-provided verified destinations.
+       Newsletter continues to the pre-existing consent-based waitlist form;
+       no contact is claimed to be stored by the footer itself.
+       ============================================================= -->
+  <footer class="site-footer" id="footer" aria-label="Loqelo website footer">
+    <div class="site-footer__decoration site-footer__decoration--one" aria-hidden="true"></div>
+    <div class="site-footer__decoration site-footer__decoration--two" aria-hidden="true"></div>
+    <div class="site-footer__inner container">
+      <div class="site-footer__main">
+        <div class="site-footer__brand">
+          <a href="#home" class="site-footer__brand-link" aria-label="Loqelo — back to top">
+            <img src="assets/logo/loqelo-logo-light.svg" width="184" height="48" loading="lazy" alt="Loqelo">
+          </a>
+          <p data-footer-i18n="brandLine">A simpler way to get things done<br>for a brighter tomorrow.</p>
+          <!-- Official profile URLs are still pending. These controls open a notice instead of guessing destinations. -->
+          <div class="site-footer__social" aria-label="Loqelo social platforms">
+            <button type="button" class="site-footer__social-link" data-footer-pending="social" aria-label="LinkedIn — official link pending" title="LinkedIn — link to be confirmed">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2.8"/><circle cx="7.8" cy="8.2" r="1" class="site-footer__social-solid"/><path d="M7.8 11.2v6.1M11.8 17.3v-6.1m0 2.4c.4-1.6 1.4-2.4 2.8-2.4 1.8 0 2.7 1.1 2.7 3.2v2.9"/></svg>
+            </button>
+            <button type="button" class="site-footer__social-link" data-footer-pending="social" aria-label="Instagram — official link pending" title="Instagram — link to be confirmed">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" class="site-footer__social-solid"/></svg>
+            </button>
+            <button type="button" class="site-footer__social-link" data-footer-pending="social" aria-label="Facebook — official link pending" title="Facebook — link to be confirmed">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.2 21v-8.2h2.6l.4-3.2h-3V7.5c0-1.1.4-1.6 1.6-1.6h1.5V3.1A18 18 0 0 0 15 3c-3 0-4.8 1.7-4.8 4.8v1.8H7.5v3.2h2.7V21z" class="site-footer__social-solid"/></svg>
+            </button>
+            <button type="button" class="site-footer__social-link" data-footer-pending="social" aria-label="YouTube — official link pending" title="YouTube — link to be confirmed">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5.5" width="20" height="13" rx="4"/><path d="m10 9 5 3-5 3z" class="site-footer__social-solid"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <nav class="site-footer__links" aria-label="Product navigation">
+          <h2 data-footer-i18n="product">Product</h2>
+          <a href="#how-it-works" data-footer-i18n="how">How it works</a>
+          <a href="#services" data-footer-i18n="services">Services</a>
+          <a href="#for-customers" data-footer-i18n="customers">For Customers</a>
+          <a href="#for-providers" data-footer-i18n="providers">For Providers</a>
+        </nav>
+
+        <nav class="site-footer__links" aria-label="Company navigation">
+          <h2 data-footer-i18n="company">Company</h2>
+          <a href="#faq" data-footer-i18n="about">FAQ</a>
+          <button type="button" data-footer-pending="company" data-footer-i18n="careers">Careers</button>
+          <button type="button" data-footer-pending="company" data-footer-i18n="press">Press</button>
+          <button type="button" data-footer-pending="company" data-footer-i18n="contact">Contact</button>
+        </nav>
+
+        <nav class="site-footer__links" aria-label="Legal information">
+          <h2 data-footer-i18n="legal">Legal</h2>
+          <a href="privacy.html" data-footer-i18n="privacy">Privacy Policy</a>
+          <a href="terms.html" data-footer-i18n="terms">Terms of Service</a>
+          <a href="cookie-policy.html" data-footer-i18n="cookies">Cookie Policy</a>
+        </nav>
+
+        <div class="site-footer__newsletter">
+          <h2 data-footer-i18n="newsletterTitle">Stay in the loop</h2>
+          <p data-footer-i18n="newsletterText">Get the latest updates about our Launch.</p>
+          <form class="site-footer__subscribe" id="footer-newsletter" aria-label="Continue to Loqelo early access waitlist">
+            <label class="sr-only" for="footer-email" data-footer-i18n="emailLabel">Your email address</label>
+            <input id="footer-email" type="email" name="email" autocomplete="email" placeholder="Your email address" maxlength="254" required aria-describedby="footer-signup-note">
+            <button type="submit" aria-label="Continue to waitlist signup" title="Continue to waitlist signup"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-7-7 7 7-7 7"/></svg></button>
+          </form>
+          <span class="site-footer__signup-note" id="footer-signup-note" data-footer-i18n="newsletterNote">Continue to the waitlist to provide consent.</span>
+          <p class="site-footer__feedback" role="status" aria-live="polite" id="footer-feedback" hidden></p>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <small data-footer-i18n="copyright">© 2026 Loqelo. All rights reserved.</small>
+        <a href="privacy.html" class="site-footer__bottom-privacy" data-footer-i18n="privacy">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+  <!-- STAGE 08 / PRE-LAUNCH HELP CHAT
+       Interactive local FAQ preview only; no remote inbox or support agent connection.
+       Replace with a consent-aware support service after launch credentials are supplied. -->
+  <aside class="loqelo-chat" aria-label="Loqelo chat help" data-loqelo-chat>
+    <div class="loqelo-chat__panel" id="loqelo-chat-panel" hidden>
+      <div class="loqelo-chat__header">
+        <span class="loqelo-chat__mark"><img src="assets/logo/loqelo-icon.svg" width="25" height="25" alt=""></span>
+        <div class="loqelo-chat__identity">
+          <strong data-chat-i18n="header">Loqelo Help</strong>
+          <span data-chat-i18n="status">Automated answers · preview</span>
+        </div>
+        <button class="loqelo-chat__close" type="button" data-chat-close aria-label="Close chat panel" title="Close chat">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5 19 19M19 5 5 19"/></svg>
+        </button>
+      </div>
+      <div class="loqelo-chat__conversation" data-chat-conversation role="log" aria-label="Chat messages" aria-live="polite" aria-relevant="additions text">
+        <p class="loqelo-chat__system" data-chat-i18n="disclaimer">This is an automated pre-launch preview. Messages are not sent to a live agent.</p>
+        <div class="loqelo-chat__bubble loqelo-chat__bubble--bot" data-chat-i18n="welcome">Welcome! How can we help you learn about Loqelo?</div>
+      </div>
+      <div class="loqelo-chat__quick" aria-label="Quick questions">
+        <button type="button" data-chat-question="launch" data-chat-i18n="launch">Launch date</button>
+        <button type="button" data-chat-question="customer" data-chat-i18n="customer">For customers</button>
+        <button type="button" data-chat-question="provider" data-chat-i18n="provider">For providers</button>
+      </div>
+      <form class="loqelo-chat__form" data-chat-form aria-label="Ask an automated question">
+        <label class="sr-only" for="loqelo-chat-message" data-chat-i18n="label">Your question</label>
+        <input id="loqelo-chat-message" data-chat-input type="text" autocomplete="off" maxlength="240" placeholder="Ask a question..." required>
+        <button type="submit" aria-label="Get automated answer" data-chat-submit>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12 15-7-4.7 14-2.7-5.1L4 12Zm7.6 1.9L19 5"/></svg>
+        </button>
+      </form>
+      <button type="button" class="loqelo-chat__waitlist" data-chat-waitlist data-chat-i18n="waitlist">Join the waitlist <span aria-hidden="true">↗</span></button>
+    </div>
+    <button class="loqelo-chat__launcher" type="button" data-chat-toggle aria-label="Open Loqelo chat help" aria-expanded="false" aria-controls="loqelo-chat-panel">
+      <svg class="loqelo-chat__launcher-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.4a7.8 7.8 0 0 1-8.1 7.5 9.3 9.3 0 0 1-3.1-.5L4 20l1.6-4.4A7.5 7.5 0 0 1 4 11.4a7.9 7.9 0 0 1 8-7.6 7.9 7.9 0 0 1 8 7.6Z"/><path d="M8 11.5h8M8 14h5"/></svg>
+      <span class="loqelo-chat__launcher-label" data-chat-i18n="launcher">Chat with us</span>
+    </button>
+  </aside>
+
+  <!-- Screenshot lightbox. Real original Figma UI screenshots only; no fabricated UI. -->
+  <dialog class="preview-modal" id="platform-modal" aria-label="Loqelo platform screenshot viewer">
+    <div class="preview-modal__panel">
+      <div class="preview-modal__top"><div><span class="preview-modal__eyebrow">LOQELO PLATFORM PREVIEW</span><strong data-preview-title>Find services</strong></div><button class="preview-modal__close" type="button" data-preview-close aria-label="Close screenshots">×</button></div>
+      <div class="preview-modal__photo"><img data-preview-image src="assets/images/platform/find-full.webp" width="1500" height="2500" alt="Original Loqelo platform screenshot"></div>
+      <div class="preview-modal__footer"><button type="button" data-preview-prev>← Previous</button><span data-preview-counter>01 / 05</span><button type="button" data-preview-next>Next →</button></div>
+    </div>
+  </dialog>
+
+  <!-- Native video dialog: opened only after a visitor requests playback.
+       Do not autoplay the promotional MP4 on page load. -->
+  <dialog class="video-modal" id="loqelo-video-modal" aria-label="Loqelo promotional video">
+    <div class="video-modal__frame">
+      <div class="video-modal__header">
+        <span>Loqelo · Promotional video</span>
+        <button class="video-modal__close" type="button" data-video-close aria-label="Close video">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <video id="loqelo-video-player" class="video-modal__player" controls playsinline preload="none" poster="assets/images/video/loqelo-story-1280.jpg" width="1920" height="1080">
+        <source src="assets/video/loqelo-promo.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+      </video>
+    </div>
+  </dialog>
+
+  <!-- Accurate pre-launch notice for features not available before launch. -->
+  <dialog class="modal modal--notice" id="section-dialog" aria-labelledby="section-dialog-title">
+    <button type="button" class="modal__close modal__close--absolute" data-close-dialog aria-label="Close dialog"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+    <img src="assets/logo/loqelo-icon.svg" width="50" height="50" alt="" class="modal__notice-logo">
+    <p class="modal__eyebrow">LOQELO · PRE-LAUNCH</p>
+    <h2 class="modal__title" id="section-dialog-title">Available after launch</h2>
+    <p class="modal__description" data-next-description>Marketplace sign-in is planned for after launch. Join the customer or provider waitlist for updates.</p>
+    <button class="button button--primary modal__notice-button" type="button" data-close-dialog>Back to homepage <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+  </dialog>
+
+  <!-- Basic privacy-first analytics preferences: no GA4 loaded until opt-in. -->
+  <section class="consent-banner" id="analytics-consent-banner" aria-label="Analytics preferences" hidden>
+    <div class="consent-banner__copy"><strong>Privacy preferences</strong><p>We use essential cookies for the waitlist and admin security. Optional analytics helps us understand visits and sign-ups. No emails or form details are sent to analytics.</p></div>
+    <div class="consent-banner__actions"><button type="button" data-consent-reject>Essential only</button><button type="button" data-consent-accept>Accept analytics</button></div>
+  </section>
+  <button type="button" class="consent-settings" data-consent-settings aria-label="Change analytics preferences">Cookie settings</button>
+</body>
+</html>
